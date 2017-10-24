@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<title>Project 2</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="JS/javaScriptLogin.js" type="text/javascript"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.js"></script>
+
 </head>
 <body>
 
-	<h2>cambios desde master</h2>
-	<h4>hola</h4>
+	<div class="wrap">
+		<div class="avatar">
+	      <img src="IMG/balon.jpg">
+		</div>
+			<form role="form" method="post" action="PHP/login.php">
+				<input id="userName" type="text" name="fieldUsername" placeholder="username" required>
+				<div class="bar">
+					<i></i>
+				</div>
+				<input id="fieldPassword" name="fieldPassword" type="password" placeholder="password" required><br>
 
-	<h1>hola prueba</h1>
+				<input type="submit" name="btn-login" id="btn-login" value="Log in"></input><br>
+				<input type="submit" id="btn-register" value="Register"></input>
+			</form>
+	</div>
 
+  	<link rel="stylesheet" href="css/styleLogin.css">
 
-	<header>
-		<h1>Trabajando aquí persona B</h1>
-	</header>
-
-	<p>solo estoy probando persona b</p>
-	
-	<p>sigo probando</p>
-
-	<p>adsfasñdkfjañsdlkfjañlsdkfjalksdfjlñaskdf</p>
-
-
-	
 </body>
 </html>
