@@ -1,0 +1,470 @@
+drop table Equipos
+create table usuarios
+(
+	nombre		varchar(30)	not null,
+	apellido	varchar(30)	not null,
+	edad 		int 		not null,
+	nombreDeUsuario	varchar(30)	not null,
+	contrasenna	varchar(30)	not null,
+	fechaRegistro 	date		null,
+	horaRegistro 	time		null,
+	constraint 	pk_nombre_usuario	primary key (nombreDeUsuario)
+);
+
+create table TEAMS (
+	Country		varchar(30)	not null,
+	Confederation	varchar(30)	not null,
+	Points		int	not null
+
+);
+
+create table flags (
+	name		varchar(100)	not null,
+	flag	varchar(100)	not null
+
+);
+
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Germany','UEFA',1606);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Brazil','CONMEBOL',1590);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Portugal','UEFA',1386);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Argentina','CONMEBOL',1325);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belgium','UEFA',1265);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Poland','UEFA',1250);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Switzerland','UEFA',1211);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('France','UEFA',1208);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chile','CONMEBOL',1195);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Colombia','CONMEBOL',1191);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Spain','UEFA',1184);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Peru','CONMEBOL',1103);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Wales','UEFA',1089);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mexico','CONCACAF',1085);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('England','UEFA',1056);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uruguay','CONMEBOL',1043);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Italy','UEFA',1035);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Croatia','UEFA',977);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Slovakia','UEFA',967);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Northern Ireland','UEFA',945);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Costa Rica','CONCACAF',936);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iceland','UEFA',931);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sweden','UEFA',918);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ukraine','UEFA',888);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iran','AFC',865);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Denmark','UEFA',848);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turkey','UEFA',842);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('USA','CONCACAF',828);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Netherlands','UEFA',819);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Egypt','CAF',815);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tunisia','CAF',810);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Serbia','UEFA',789);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Senegal','CAF',774);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Republic of Ireland','UEFA',769);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ecuador','CONMEBOL',767);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bosnia-Herzegovina','UEFA',761);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Montenegro','UEFA',749);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bulgaria','UEFA',739);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Paraguay','CONMEBOL',738);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Japan','AFC',737);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Romania','UEFA',714);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Congo DR','CAF',709);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Scotland','UEFA',702);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nigeria','CAF',696);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cameroon','CAF',689);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bolivia','CONMEBOL',666);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Greece','UEFA',665);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Haiti','CONCACAF',664);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Burkina Faso','CAF',663);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Australia','AFC',662);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Korea Republic','AFC',659);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ghana','CAF',646);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Saudi Arabia','AFC',641);
+
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Slovenia','UEFA',636);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Morocco','CAF',635);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Austria','UEFA',632);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Czech Republic','UEFA',630);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Hungary','UEFA',629);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Panama','CONCACAF',618);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Jamaica','CONCACAF',607);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('China PR','AFC',564);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Algeria','CAF',564);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Russia','UEFA',558);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guinea','CAF',554);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Albania','UEFA',551);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cape Verde Islands','CAF',548);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Venezuela','CONMEBOL',525);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uzbekistan','AFC',511);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cyprus','UEFA',487);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uganda','CAF',486);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('United Arab Emirates','AFC',480);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Norway','UEFA',472);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Honduras','CONCACAF',467);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Syria','AFC',465);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mali','CAF',464);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belarus','UEFA',454);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Zambia','CAF',448);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gabon','CAF',430);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('South Africa','CAF',423);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Libya','CAF',422);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Israel','UEFA',420);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Armenia','UEFA',414);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Estonia','UEFA',413);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Qatar','AFC',406);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Curacao','CONCACAF',405);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Finland','UEFA',404);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Benin','CAF',400);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kenya','CAF',400);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iraq','AFC',400);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Palestine','AFC',389);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Azerbaijan','UEFA',388);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Faroe Islands','UEFA',384);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guinea-Bissau','CAF',381);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Congo','CAF',378);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Canada','CONCACAF',368);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sierra Leone','CAF',366);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mauritania','CAF',365);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('El Salvador','CONCACAF',361);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Trinidad and Tobago','CONCACAF',361);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Luxembourg','UEFA',343);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Madagascar','CAF',343);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('FYR Macedonia','UEFA',328);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Georgia','UEFA',328);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Zimbabwe','CAF',326);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Niger','CAF',325);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('India','AFC',316);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mozambique','CAF',309);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nicaragua','CONCACAF',307);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Jordan','AFC',305);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Suriname','CONCACAF',303);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Oman','AFC',292);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('New Zealand','OFC',289);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Kitts and Nevis','CONCACAF',286);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lebanon','AFC',280);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malawi','CAF',278);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Antigua and Barbuda','CONCACAF',276);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Rwanda','CAF',273);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bahrain','AFC',273);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lithuania','UEFA',266);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Togo','CAF',263);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kyrgyzstan','AFC',260);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Philippines','AFC',259);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Korea DPR','AFC',259);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tanzania','CAF',256);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kazakhstan','UEFA',254);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Central African Republic','CAF',251);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Yemen','AFC',247);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Burundi','CAF',245);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Vietnam','AFC',241);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guatemala','CONCACAF',235);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Namibia','CAF',233);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Liberia','CAF',230);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sudan','CAF',228);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Equatorial Guinea','CAF',224);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turkmenistan','AFC',221);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Angola','CAF',219);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Thailand','AFC',219);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Swaziland','CAF',217);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tajikistan','AFC',214);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Comoros','CAF',204);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('New Caledonia','OFC',196);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lesotho','CAF',193);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Andorra','UEFA',191);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ethiopia','CAF',191);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Botswana','CAF',190);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Hong Kong','AFC',188);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Latvia','UEFA',182);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tahiti','OFC',181);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('South Sudan','CAF',177);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chinese Taipei','AFC',175);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Myanmar','AFC',172);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chad','CAF',168);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Maldives','AFC',156);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Solomon Islands','OFC',153);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guyana','CONCACAF',148);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Moldova','UEFA',148);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Afghanistan','AFC',147);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Grenada','CONCACAF',141);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Dominican Republic','CONCACAF',140);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mauritius','CAF',136);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Singapore','AFC',134);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Puerto Rico','CONCACAF',132);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gambia','CAF',131);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Papua New Guinea','OFC',130);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Laos','AFC',126);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malaysia','AFC',126);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belize','CONCACAF',118);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Indonesia','AFC',116);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Barbados','CONCACAF',115);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Dominica','CONCACAF',111);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cambodia','AFC',110);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Vincent and Grenadines','CONCACAF',107);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bhutan','AFC',102);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nepal','AFC',101);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sao Tome e Principe','CAF',98);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Fiji','OFC',95);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Lucia','CONCACAF',94);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Aruba','CONCACAF',92);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cuba','CONCACAF',88);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kuwait','AFC',75);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Macau','AFC',72);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bermuda','CONCACAF',72);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kosovo','UEFA',67);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Djibouti','CAF',64);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Brunei Darussalam','AFC',62);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Liechtenstein','UEFA',56);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Vanuatu','OFC',51);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guam','AFC',50);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Seychelles','CAF',48);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malta','UEFA',44);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Timor-Leste','AFC',40);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('American Samoa','OFC',38);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cook Islands','OFC',38);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Samoa','OFC',38);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bangladesh','AFC',35);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mongolia','AFC',30);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sri Lanka','AFC',29);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('US Virgin Islands','CONCACAF',26);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Pakistan','AFC',20);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Montserrat','CONCACAF',20);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turks and Caicos Islands','CONCACAF',13);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cayman Islands','CONCACAF',13);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('San Marino','UEFA',10);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('British Virgin Islands','CONCACAF',6);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tonga','OFC',0);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Eritrea','CAF',0);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Somalia','CAF',0);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bahamas','CONCACAF',0);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Anguilla','CONCACAF',0);
+INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gibraltar','UEFA',0);
+
+INSERT INTO Flags (name, flag) VALUES ('Germany','//img.fifa.com/images/flags/4/ger.png');
+INSERT INTO Flags (name, flag) VALUES ('Brazil','//img.fifa.com/images/flags/4/bra.png');
+INSERT INTO Flags (name, flag) VALUES ('Portugal','//img.fifa.com/images/flags/4/por.png');
+INSERT INTO Flags (name, flag) VALUES ('Argentina','//img.fifa.com/images/flags/4/arg.png');
+INSERT INTO Flags (name, flag) VALUES ('Belgium','//img.fifa.com/images/flags/4/bel.png');
+INSERT INTO Flags (name, flag) VALUES ('Poland','//img.fifa.com/images/flags/4/pol.png');
+INSERT INTO Flags (name, flag) VALUES ('France','//img.fifa.com/images/flags/4/fra.png');
+INSERT INTO Flags (name, flag) VALUES ('Spain','//img.fifa.com/images/flags/4/esp.png');
+INSERT INTO Flags (name, flag) VALUES ('Chile','//img.fifa.com/images/flags/4/chi.png');
+INSERT INTO Flags (name, flag) VALUES ('Peru','//img.fifa.com/images/flags/4/per.png');
+INSERT INTO Flags (name, flag) VALUES ('Switzerland','//img.fifa.com/images/flags/4/sui.png');
+INSERT INTO Flags (name, flag) VALUES ('England','//img.fifa.com/images/flags/4/eng.png');
+INSERT INTO Flags (name, flag) VALUES ('Colombia','//img.fifa.com/images/flags/4/col.png');
+INSERT INTO Flags (name, flag) VALUES ('Wales','//img.fifa.com/images/flags/4/wal.png');
+INSERT INTO Flags (name, flag) VALUES ('Italy','//img.fifa.com/images/flags/4/ita.png');
+INSERT INTO Flags (name, flag) VALUES ('Mexico','//img.fifa.com/images/flags/4/mex.png');
+INSERT INTO Flags (name, flag) VALUES ('Uruguay','//img.fifa.com/images/flags/4/uru.png');
+INSERT INTO Flags (name, flag) VALUES ('Croatia','//img.fifa.com/images/flags/4/cro.png');
+INSERT INTO Flags (name, flag) VALUES ('Denmark','//img.fifa.com/images/flags/4/den.png');
+INSERT INTO Flags (name, flag) VALUES ('Netherlands','//img.fifa.com/images/flags/4/ned.png');
+INSERT INTO Flags (name, flag) VALUES ('Iceland','//img.fifa.com/images/flags/4/isl.png');
+INSERT INTO Flags (name, flag) VALUES ('Costa Rica','//img.fifa.com/images/flags/4/crc.png');
+INSERT INTO Flags (name, flag) VALUES ('Northern Ireland','//img.fifa.com/images/flags/4/nir.png');
+INSERT INTO Flags (name, flag) VALUES ('Slovakia','//img.fifa.com/images/flags/4/svk.png');
+INSERT INTO Flags (name, flag) VALUES ('Sweden','//img.fifa.com/images/flags/4/swe.png');
+INSERT INTO Flags (name, flag) VALUES ('Republic of Ireland','//img.fifa.com/images/flags/4/irl.png');
+INSERT INTO Flags (name, flag) VALUES ('USA','//img.fifa.com/images/flags/4/usa.png');
+INSERT INTO Flags (name, flag) VALUES ('Tunisia','//img.fifa.com/images/flags/4/tun.png');
+INSERT INTO Flags (name, flag) VALUES ('Scotland','//img.fifa.com/images/flags/4/sco.png');
+INSERT INTO Flags (name, flag) VALUES ('Egypt','//img.fifa.com/images/flags/4/egy.png');
+INSERT INTO Flags (name, flag) VALUES ('Ukraine','//img.fifa.com/images/flags/4/ukr.png');
+INSERT INTO Flags (name, flag) VALUES ('Senegal','//img.fifa.com/images/flags/4/sen.png');
+INSERT INTO Flags (name, flag) VALUES ('Turkey','//img.fifa.com/images/flags/4/tur.png');
+INSERT INTO Flags (name, flag) VALUES ('Iran','//img.fifa.com/images/flags/4/irn.png');
+INSERT INTO Flags (name, flag) VALUES ('Congo DR','//img.fifa.com/images/flags/4/cod.png');
+INSERT INTO Flags (name, flag) VALUES ('Paraguay','//img.fifa.com/images/flags/4/par.png');
+INSERT INTO Flags (name, flag) VALUES ('Bulgaria','//img.fifa.com/images/flags/4/bul.png');
+INSERT INTO Flags (name, flag) VALUES ('Serbia','//img.fifa.com/images/flags/4/srb.png');
+INSERT INTO Flags (name, flag) VALUES ('Austria','//img.fifa.com/images/flags/4/aut.png');
+INSERT INTO Flags (name, flag) VALUES ('Bosnia and Herzegovina','//img.fifa.com/images/flags/4/bih.png');
+INSERT INTO Flags (name, flag) VALUES ('Nigeria','//img.fifa.com/images/flags/4/nga.png');
+INSERT INTO Flags (name, flag) VALUES ('Cameroon','//img.fifa.com/images/flags/4/cmr.png');
+INSERT INTO Flags (name, flag) VALUES ('Australia','//img.fifa.com/images/flags/4/aus.png');
+INSERT INTO Flags (name, flag) VALUES ('Japan','//img.fifa.com/images/flags/4/jpn.png');
+INSERT INTO Flags (name, flag) VALUES ('Romania','//img.fifa.com/images/flags/4/rou.png');
+INSERT INTO Flags (name, flag) VALUES ('Czech Republic','//img.fifa.com/images/flags/4/cze.png');
+INSERT INTO Flags (name, flag) VALUES ('Greece','//img.fifa.com/images/flags/4/gre.png');
+INSERT INTO Flags (name, flag) VALUES ('Morocco','//img.fifa.com/images/flags/4/mar.png');
+INSERT INTO Flags (name, flag) VALUES ('Panama','//img.fifa.com/images/flags/4/pan.png');
+INSERT INTO Flags (name, flag) VALUES ('Bolivia','//img.fifa.com/images/flags/4/bol.png');
+INSERT INTO Flags (name, flag) VALUES ('Venezuela','//img.fifa.com/images/flags/4/ven.png');
+INSERT INTO Flags (name, flag) VALUES ('Ghana','//img.fifa.com/images/flags/4/gha.png');
+INSERT INTO Flags (name, flag) VALUES ('Hungary','//img.fifa.com/images/flags/4/hun.png');
+INSERT INTO Flags (name, flag) VALUES ('Montenegro','//img.fifa.com/images/flags/4/mne.png');
+INSERT INTO Flags (name, flag) VALUES ('Burkina Faso','//img.fifa.com/images/flags/4/bfa.png');
+INSERT INTO Flags (name, flag) VALUES ('Haiti','//img.fifa.com/images/flags/4/hai.png');
+INSERT INTO Flags (name, flag) VALUES ('China PR','//img.fifa.com/images/flags/4/chn.png');
+INSERT INTO Flags (name, flag) VALUES ('Norway','//img.fifa.com/images/flags/4/nor.png');
+INSERT INTO Flags (name, flag) VALUES ('Jamaica','//img.fifa.com/images/flags/4/jam.png');
+INSERT INTO Flags (name, flag) VALUES ('Ecuador','//img.fifa.com/images/flags/4/ecu.png');
+
+INSERT INTO Flags (name, flag) VALUES ('Korea Republic','//img.fifa.com/images/flags/4/kor.png');
+INSERT INTO Flags (name, flag) VALUES ('Saudi Arabia','//img.fifa.com/images/flags/4/ksa.png');
+INSERT INTO Flags (name, flag) VALUES ('Cape Verde Islands','//img.fifa.com/images/flags/4/cpv.png');
+INSERT INTO Flags (name, flag) VALUES ('Russia','//img.fifa.com/images/flags/4/rus.png');
+INSERT INTO Flags (name, flag) VALUES ('Guinea','//img.fifa.com/images/flags/4/gui.png');
+INSERT INTO Flags (name, flag) VALUES ('Algeria','//img.fifa.com/images/flags/4/alg.png');
+INSERT INTO Flags (name, flag) VALUES ('Slovenia','//img.fifa.com/images/flags/4/svn.png');
+INSERT INTO Flags (name, flag) VALUES ('Honduras','//img.fifa.com/images/flags/4/hon.png');
+INSERT INTO Flags (name, flag) VALUES ('Uganda','//img.fifa.com/images/flags/4/uga.png');
+INSERT INTO Flags (name, flag) VALUES ('Albania','//img.fifa.com/images/flags/4/alb.png');
+INSERT INTO Flags (name, flag) VALUES ('United Arab Emirates','//img.fifa.com/images/flags/4/uae.png');
+INSERT INTO Flags (name, flag) VALUES ('Mali','//img.fifa.com/images/flags/4/mli.png');
+INSERT INTO Flags (name, flag) VALUES ('Finland','//img.fifa.com/images/flags/4/fin.png');
+INSERT INTO Flags (name, flag) VALUES ('South Africa','//img.fifa.com/images/flags/4/rsa.png');
+INSERT INTO Flags (name, flag) VALUES ('Uzbekistan','//img.fifa.com/images/flags/4/uzb.png');
+INSERT INTO Flags (name, flag) VALUES ('Syria','//img.fifa.com/images/flags/4/syr.png');
+INSERT INTO Flags (name, flag) VALUES ('Zambia','//img.fifa.com/images/flags/4/zam.png');
+INSERT INTO Flags (name, flag) VALUES ('Benin','//img.fifa.com/images/flags/4/ben.png');
+INSERT INTO Flags (name, flag) VALUES ('Iraq','//img.fifa.com/images/flags/4/irq.png');
+INSERT INTO Flags (name, flag) VALUES ('Estonia','//img.fifa.com/images/flags/4/est.png');
+INSERT INTO Flags (name, flag) VALUES ('Israel','//img.fifa.com/images/flags/4/isr.png');
+INSERT INTO Flags (name, flag) VALUES ('Trinidad and Tobago','//img.fifa.com/images/flags/4/tri.png');
+INSERT INTO Flags (name, flag) VALUES ('Palestine','//img.fifa.com/images/flags/4/ple.png');
+INSERT INTO Flags (name, flag) VALUES ('FYR Macedonia','//img.fifa.com/images/flags/4/mkd.png');
+INSERT INTO Flags (name, flag) VALUES ('Cyprus','//img.fifa.com/images/flags/4/cyp.png');
+INSERT INTO Flags (name, flag) VALUES ('Libya','//img.fifa.com/images/flags/4/lby.png');
+INSERT INTO Flags (name, flag) VALUES ('Guinea-Bissau','//img.fifa.com/images/flags/4/gnb.png');
+INSERT INTO Flags (name, flag) VALUES ('CuraÃ§ao','//img.fifa.com/images/flags/4/cuw.png');
+INSERT INTO Flags (name, flag) VALUES ('Armenia','//img.fifa.com/images/flags/4/arm.png');
+INSERT INTO Flags (name, flag) VALUES ('Belarus','//img.fifa.com/images/flags/4/blr.png');
+INSERT INTO Flags (name, flag) VALUES ('Gabon','//img.fifa.com/images/flags/4/gab.png');
+INSERT INTO Flags (name, flag) VALUES ('Luxembourg','//img.fifa.com/images/flags/4/lux.png');
+INSERT INTO Flags (name, flag) VALUES ('Congo','//img.fifa.com/images/flags/4/cgo.png');
+INSERT INTO Flags (name, flag) VALUES ('Faroe Islands','//img.fifa.com/images/flags/4/fro.png');
+INSERT INTO Flags (name, flag) VALUES ('Canada','//img.fifa.com/images/flags/4/can.png');
+INSERT INTO Flags (name, flag) VALUES ('El Salvador','//img.fifa.com/images/flags/4/slv.png');
+INSERT INTO Flags (name, flag) VALUES ('Qatar','//img.fifa.com/images/flags/4/qat.png');
+INSERT INTO Flags (name, flag) VALUES ('Sierra Leone','//img.fifa.com/images/flags/4/sle.png');
+INSERT INTO Flags (name, flag) VALUES ('Lebanon','//img.fifa.com/images/flags/4/lib.png');
+INSERT INTO Flags (name, flag) VALUES ('Mauritania','//img.fifa.com/images/flags/4/mtn.png');
+INSERT INTO Flags (name, flag) VALUES ('Kenya','//img.fifa.com/images/flags/4/ken.png');
+INSERT INTO Flags (name, flag) VALUES ('Madagascar','//img.fifa.com/images/flags/4/mad.png');
+INSERT INTO Flags (name, flag) VALUES ('Zimbabwe','//img.fifa.com/images/flags/4/zim.png');
+INSERT INTO Flags (name, flag) VALUES ('India','//img.fifa.com/images/flags/4/ind.png');
+INSERT INTO Flags (name, flag) VALUES ('Niger','//img.fifa.com/images/flags/4/nig.png');
+INSERT INTO Flags (name, flag) VALUES ('Georgia','//img.fifa.com/images/flags/4/geo.png');
+INSERT INTO Flags (name, flag) VALUES ('St. Kitts and Nevis','//img.fifa.com/images/flags/4/skn.png');
+INSERT INTO Flags (name, flag) VALUES ('Nicaragua','//img.fifa.com/images/flags/4/nca.png');
+INSERT INTO Flags (name, flag) VALUES ('Oman','//img.fifa.com/images/flags/4/oma.png');
+INSERT INTO Flags (name, flag) VALUES ('Mozambique','//img.fifa.com/images/flags/4/moz.png');
+INSERT INTO Flags (name, flag) VALUES ('Yemen','//img.fifa.com/images/flags/4/yem.png');
+INSERT INTO Flags (name, flag) VALUES ('Jordan','//img.fifa.com/images/flags/4/jor.png');
+INSERT INTO Flags (name, flag) VALUES ('Turkmenistan','//img.fifa.com/images/flags/4/tkm.png');
+INSERT INTO Flags (name, flag) VALUES ('Azerbaijan','//img.fifa.com/images/flags/4/aze.png');
+INSERT INTO Flags (name, flag) VALUES ('Philippines','//img.fifa.com/images/flags/4/phi.png');
+INSERT INTO Flags (name, flag) VALUES ('Malawi','//img.fifa.com/images/flags/4/mwi.png');
+INSERT INTO Flags (name, flag) VALUES ('Rwanda','//img.fifa.com/images/flags/4/rwa.png');
+INSERT INTO Flags (name, flag) VALUES ('Central African Republic','//img.fifa.com/images/flags/4/cta.png');
+INSERT INTO Flags (name, flag) VALUES ('Kyrgyz Republic','//img.fifa.com/images/flags/4/kgz.png');
+INSERT INTO Flags (name, flag) VALUES ('Vietnam','//img.fifa.com/images/flags/4/vie.png');
+INSERT INTO Flags (name, flag) VALUES ('New Zealand','//img.fifa.com/images/flags/4/nzl.png');
+INSERT INTO Flags (name, flag) VALUES ('Tajikistan','//img.fifa.com/images/flags/4/tjk.png');
+INSERT INTO Flags (name, flag) VALUES ('Togo','//img.fifa.com/images/flags/4/tog.png');
+INSERT INTO Flags (name, flag) VALUES ('Bahrain','//img.fifa.com/images/flags/4/bhr.png');
+INSERT INTO Flags (name, flag) VALUES ('Suriname','//img.fifa.com/images/flags/4/sur.png');
+INSERT INTO Flags (name, flag) VALUES ('Comoros','//img.fifa.com/images/flags/4/com.png');
+INSERT INTO Flags (name, flag) VALUES ('Guatemala','//img.fifa.com/images/flags/4/gua.png');
+INSERT INTO Flags (name, flag) VALUES ('Latvia','//img.fifa.com/images/flags/4/lva.png');
+INSERT INTO Flags (name, flag) VALUES ('Namibia','//img.fifa.com/images/flags/4/nam.png');
+INSERT INTO Flags (name, flag) VALUES ('Burundi','//img.fifa.com/images/flags/4/bdi.png');
+INSERT INTO Flags (name, flag) VALUES ('Korea DPR','//img.fifa.com/images/flags/4/prk.png');
+INSERT INTO Flags (name, flag) VALUES ('Kazakhstan','//img.fifa.com/images/flags/4/kaz.png');
+INSERT INTO Flags (name, flag) VALUES ('Equatorial Guinea','//img.fifa.com/images/flags/4/eqg.png');
+INSERT INTO Flags (name, flag) VALUES ('Liberia','//img.fifa.com/images/flags/4/lbr.png');
+INSERT INTO Flags (name, flag) VALUES ('Tanzania','//img.fifa.com/images/flags/4/tan.png');
+INSERT INTO Flags (name, flag) VALUES ('Antigua and Barbuda','//img.fifa.com/images/flags/4/atg.png');
+INSERT INTO Flags (name, flag) VALUES ('Thailand','//img.fifa.com/images/flags/4/tha.png');
+INSERT INTO Flags (name, flag) VALUES ('Angola','//img.fifa.com/images/flags/4/ang.png');
+INSERT INTO Flags (name, flag) VALUES ('Swaziland','//img.fifa.com/images/flags/4/swz.png');
+INSERT INTO Flags (name, flag) VALUES ('Sudan','//img.fifa.com/images/flags/4/sdn.png');
+INSERT INTO Flags (name, flag) VALUES ('Hong Kong','//img.fifa.com/images/flags/4/hkg.png');
+INSERT INTO Flags (name, flag) VALUES ('Chinese Taipei','//img.fifa.com/images/flags/4/tpe.png');
+INSERT INTO Flags (name, flag) VALUES ('Andorra','//img.fifa.com/images/flags/4/and.png');
+INSERT INTO Flags (name, flag) VALUES ('Lithuania','//img.fifa.com/images/flags/4/ltu.png');
+INSERT INTO Flags (name, flag) VALUES ('Lesotho','//img.fifa.com/images/flags/4/les.png');
+INSERT INTO Flags (name, flag) VALUES ('Botswana','//img.fifa.com/images/flags/4/bot.png');
+INSERT INTO Flags (name, flag) VALUES ('Tahiti','//img.fifa.com/images/flags/4/tah.png');
+INSERT INTO Flags (name, flag) VALUES ('Chad','//img.fifa.com/images/flags/4/cha.png');
+INSERT INTO Flags (name, flag) VALUES ('New Caledonia','//img.fifa.com/images/flags/4/ncl.png');
+INSERT INTO Flags (name, flag) VALUES ('Ethiopia','//img.fifa.com/images/flags/4/eth.png');
+INSERT INTO Flags (name, flag) VALUES ('Solomon Islands','//img.fifa.com/images/flags/4/sol.png');
+INSERT INTO Flags (name, flag) VALUES ('South Sudan','//img.fifa.com/images/flags/4/ssd.png');
+INSERT INTO Flags (name, flag) VALUES ('Afghanistan','//img.fifa.com/images/flags/4/afg.png');
+INSERT INTO Flags (name, flag) VALUES ('Myanmar','//img.fifa.com/images/flags/4/mya.png');
+INSERT INTO Flags (name, flag) VALUES ('Maldives','//img.fifa.com/images/flags/4/mdv.png');
+INSERT INTO Flags (name, flag) VALUES ('Grenada','//img.fifa.com/images/flags/4/grn.png');
+INSERT INTO Flags (name, flag) VALUES ('Mauritius','//img.fifa.com/images/flags/4/mri.png');
+INSERT INTO Flags (name, flag) VALUES ('Papua New Guinea','//img.fifa.com/images/flags/4/png.png');
+INSERT INTO Flags (name, flag) VALUES ('Barbados','//img.fifa.com/images/flags/4/brb.png');
+INSERT INTO Flags (name, flag) VALUES ('Belize','//img.fifa.com/images/flags/4/blz.png');
+INSERT INTO Flags (name, flag) VALUES ('Laos','//img.fifa.com/images/flags/4/lao.png');
+INSERT INTO Flags (name, flag) VALUES ('Dominican Republic','//img.fifa.com/images/flags/4/dom.png');
+INSERT INTO Flags (name, flag) VALUES ('Gambia','//img.fifa.com/images/flags/4/gam.png');
+INSERT INTO Flags (name, flag) VALUES ('Guyana','//img.fifa.com/images/flags/4/guy.png');
+INSERT INTO Flags (name, flag) VALUES ('Indonesia','//img.fifa.com/images/flags/4/idn.png');
+INSERT INTO Flags (name, flag) VALUES ('Moldova','//img.fifa.com/images/flags/4/mda.png');
+INSERT INTO Flags (name, flag) VALUES ('Puerto Rico','//img.fifa.com/images/flags/4/pur.png');
+INSERT INTO Flags (name, flag) VALUES ('Dominica','//img.fifa.com/images/flags/4/dma.png');
+INSERT INTO Flags (name, flag) VALUES ('Malaysia','//img.fifa.com/images/flags/4/mas.png');
+INSERT INTO Flags (name, flag) VALUES ('Cambodia','//img.fifa.com/images/flags/4/cam.png');
+INSERT INTO Flags (name, flag) VALUES ('St. Vincent and the Grenadines','//img.fifa.com/images/flags/4/vin.png');
+INSERT INTO Flags (name, flag) VALUES ('Singapore','//img.fifa.com/images/flags/4/sin.png');
+INSERT INTO Flags (name, flag) VALUES ('St. Lucia','//img.fifa.com/images/flags/4/lca.png');
+INSERT INTO Flags (name, flag) VALUES ('Fiji','//img.fifa.com/images/flags/4/fij.png');
+INSERT INTO Flags (name, flag) VALUES ('SÃ£o TomÃ© e PrÃ­ncipe','//img.fifa.com/images/flags/4/stp.png');
+INSERT INTO Flags (name, flag) VALUES ('Nepal','//img.fifa.com/images/flags/4/nep.png');
+INSERT INTO Flags (name, flag) VALUES ('Aruba','//img.fifa.com/images/flags/4/aru.png');
+INSERT INTO Flags (name, flag) VALUES ('Cuba','//img.fifa.com/images/flags/4/cub.png');
+INSERT INTO Flags (name, flag) VALUES ('Macau','//img.fifa.com/images/flags/4/mac.png');
+INSERT INTO Flags (name, flag) VALUES ('Bermuda','//img.fifa.com/images/flags/4/ber.png');
+INSERT INTO Flags (name, flag) VALUES ('Malta','//img.fifa.com/images/flags/4/mlt.png');
+INSERT INTO Flags (name, flag) VALUES ('Kosovo','//img.fifa.com/images/flags/4/kvx.png');
+INSERT INTO Flags (name, flag) VALUES ('Brunei Darussalam','//img.fifa.com/images/flags/4/bru.png');
+INSERT INTO Flags (name, flag) VALUES ('Djibouti','//img.fifa.com/images/flags/4/dji.png');
+INSERT INTO Flags (name, flag) VALUES ('Kuwait','//img.fifa.com/images/flags/4/kuw.png');
+INSERT INTO Flags (name, flag) VALUES ('Liechtenstein','//img.fifa.com/images/flags/4/lie.png');
+INSERT INTO Flags (name, flag) VALUES ('Vanuatu','//img.fifa.com/images/flags/4/van.png');
+INSERT INTO Flags (name, flag) VALUES ('Seychelles','//img.fifa.com/images/flags/4/sey.png');
+INSERT INTO Flags (name, flag) VALUES ('Bhutan','//img.fifa.com/images/flags/4/bhu.png');
+INSERT INTO Flags (name, flag) VALUES ('Guam','//img.fifa.com/images/flags/4/gum.png');
+INSERT INTO Flags (name, flag) VALUES ('Timor-Leste','//img.fifa.com/images/flags/4/tls.png');
+INSERT INTO Flags (name, flag) VALUES ('American Samoa','//img.fifa.com/images/flags/4/asa.png');
+INSERT INTO Flags (name, flag) VALUES ('Cook Islands','//img.fifa.com/images/flags/4/cok.png');
+INSERT INTO Flags (name, flag) VALUES ('Samoa','//img.fifa.com/images/flags/4/sam.png');
+INSERT INTO Flags (name, flag) VALUES ('Bangladesh','//img.fifa.com/images/flags/4/ban.png');
+INSERT INTO Flags (name, flag) VALUES ('Mongolia','//img.fifa.com/images/flags/4/mng.png');
+INSERT INTO Flags (name, flag) VALUES ('Sri Lanka','//img.fifa.com/images/flags/4/sri.png');
+INSERT INTO Flags (name, flag) VALUES ('US Virgin Islands','//img.fifa.com/images/flags/4/vir.png');
+INSERT INTO Flags (name, flag) VALUES ('Montserrat','//img.fifa.com/images/flags/4/msr.png');
+INSERT INTO Flags (name, flag) VALUES ('Pakistan','//img.fifa.com/images/flags/4/pak.png');
+INSERT INTO Flags (name, flag) VALUES ('Turks and Caicos Islands','//img.fifa.com/images/flags/4/tca.png');
+INSERT INTO Flags (name, flag) VALUES ('Cayman Islands','//img.fifa.com/images/flags/4/cay.png');
+INSERT INTO Flags (name, flag) VALUES ('San Marino','//img.fifa.com/images/flags/4/smr.png');
+INSERT INTO Flags (name, flag) VALUES ('British Virgin Islands','//img.fifa.com/images/flags/4/vgb.png');
+INSERT INTO Flags (name, flag) VALUES ('Anguilla','//img.fifa.com/images/flags/4/aia.png');
+INSERT INTO Flags (name, flag) VALUES ('Bahamas','//img.fifa.com/images/flags/4/bah.png');
+INSERT INTO Flags (name, flag) VALUES ('Eritrea','//img.fifa.com/images/flags/4/eri.png');
+INSERT INTO Flags (name, flag) VALUES ('Gibraltar','//img.fifa.com/images/flags/4/gib.png');
+INSERT INTO Flags (name, flag) VALUES ('Somalia','//img.fifa.com/images/flags/4/som.png');
+INSERT INTO Flags (name, flag) VALUES ('Tonga','img.fifa.com/images/flags/4/tga.png');
+
+delete from TEAMS
+
+select nombreDeUsuario from usuarios
+
+select * from flags as f
+ inner join
+ TEAMS as t on (f.name = t.Country) order by t.points DESC limit 100
+
+
+insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
+values
+('Miguel','Méndez Rojas',21, 'miguelmendez','mendez',now(),now())
+
+
+insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
+values
+('Kenneth','Alvarez Esquivel',21, 'kenalv','12345',now(),now())
+
+select nombreDeUsuario from usuarios where nombreDeUsuario='miguelmendez'
+select nombreDeUsuario, contrasenna from usuarios where (nombreDeUsuario='miguelmendez')
