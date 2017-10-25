@@ -17,7 +17,7 @@ if (isset($_REQUEST['btn-login']))
 	}
 
 	$arr = pg_fetch_all($result);
-
+    $test  = 0;
 	$prueba = $arr[0];
 
 	print_r($prueba['nombredeusuario']);
