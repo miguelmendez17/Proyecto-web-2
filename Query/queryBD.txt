@@ -1,4 +1,3 @@
-drop table usuarios
 create table usuarios
 (
 	nombre		varchar(30)	not null,
