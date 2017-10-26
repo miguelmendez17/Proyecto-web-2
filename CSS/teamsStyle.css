@@ -1,0 +1,64 @@
+.productbox {
+    background-color:#ffffff;
+    padding:10px;
+
+    border: 1px solid #cfcfcf;
+    -moz-box-shadow: 2px 2px 4px 0 #cfcfcf;
+    -webkit-box-shadow: 2px 2px 4px 0 #cfcfcf;
+    -o-box-shadow: 2px 2px 4px 0 #cfcfcf;
+    box-shadow: 2px 2px 4px 0 #cfcfcf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
+
+
+}
+
+#cart-shop-display{
+    margin-left: 20%;
+    width: 850px;
+    height: 600px;
+    overflow: hidden;
+}
+#cart-shop{
+    width: 100%;
+    height: 450px;
+    overflow: auto;
+}
+#cart-shop-data{
+    width: 100%;
+    height: 150px;
+    float: left;
+
+}
+
+#product-box{
+    width: 200px;
+    height:390px;
+}
+.producttitle {
+    font-weight:bold;
+    font-size:1.2em;
+    padding:5px 0 5px 0;
+}
+
+.producttext {
+
+}
+.container-fluid{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    overflow: hidden;
+}
+.productprice {
+    border-top:1px solid #dadada;
+    padding-top:5px;
+}
+
+.pricetext {
+    font-weight:bold;
+    font-size:1.4em;
+}
+
+/* Cosmetic only */
+
+
