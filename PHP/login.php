@@ -2,7 +2,7 @@
 
 include './connectionPHP.php';
 
-	$connectionConflict  = 'http://localhost/Proyecto Web 2/menuPrincipal.html';
+	$connectionConflict  = 'http://localhost/Proyecto-web-2/menuPrincipal.html';
 
 if (isset($_REQUEST['btn-login']))
 {
