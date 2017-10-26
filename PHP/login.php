@@ -19,8 +19,7 @@ if (isset($_REQUEST['btn-login']))
 	}
 
 	$arr = pg_fetch_all($result);
-
-
+	
 	if (is_array($arr))
 	{
     	foreach($arr as $array){

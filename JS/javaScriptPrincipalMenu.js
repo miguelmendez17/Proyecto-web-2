@@ -21,22 +21,26 @@ function view(divID)
     }
 }
 
+function addCountry(){
+    var countryName = $("#countryName").val();
+    var countryPoints = $("#pointsCountry").val();
+    var countryImage = $("#countryImage").val();
+    var loadConfederations = $("#loadConfederations").val();
+    $.ajax({
+        url: "PHP/addCountry.php?",
+        type: "post",
+        data: {name:countryName, points:countryPoints, 
+               image: countryImage, confederations:loadConfederations},
+        success: function(data){
+            alert(data); 
+       }
+    });
 
+    $("countryName").empty();
+    $("#pointsCountry").empty();
+    $("#countryImage").empty();
+}
 
-$("#home").click(function(){
-    alert("entra");
-   /* $.ajax({
-        url: 'PHP/prueba.php',
-        type: 'GET',
-        data: 'iduser=12345',
-        success: function(data) {
-            alert(data);
-    },
-        error: function(){
-            alert('Error!');
-    }
-});*/
-});
 
 
 
