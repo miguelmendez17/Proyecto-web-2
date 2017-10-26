@@ -15,7 +15,7 @@ $.get("./PHP/getRanking.php", function(datas,status){
             $('#content').append(
                 "<div class='col-md-3'>" +
                 "<div class='productbox'>"+
-                "<img src='"+ data[i].flag +"' class='productoTamano' alt='Product IMG'>"+
+                "<img src='"+ data[i].flag +"' class='productoTamano' alt='TEAM IMG'>"+
                 "<div class='producttitle'>"+data[i].name+"</div>"+
                 "<p class='text-justify'>Rank: "+(i+1)+"</p>"+
                 "<p class='text-justify'>Country: "+data[1].name+"</p>"+

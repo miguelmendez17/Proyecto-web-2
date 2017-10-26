@@ -8,7 +8,8 @@
     -o-box-shadow: 2px 2px 4px 0 #cfcfcf;
     box-shadow: 2px 2px 4px 0 #cfcfcf;
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
-
+    width: 220px;
+    height: 270px;
 
 }
 
