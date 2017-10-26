@@ -1,17 +1,17 @@
 
 
+function loadRanking() {
+
+    $.get("./PHP/getRanking.php", function(datas,status){
 
 
-$.get("./PHP/getRanking.php", function(datas,status){
+        // var datas = JSON.stringify(data);
+        //console.log(datas);
 
-
-       // var datas = JSON.stringify(data);
-    console.log(datas);
-
-    var data = JSON.parse(datas);
-    console.log(data[1].name);
-  $("#content").empty();
-    for(var i=0; i < 100 ; i++){
+        var data = JSON.parse(datas);
+        console.log(data[1].name);
+        $("#content").empty();
+        for(var i=0; i < 100 ; i++){
             $('#content').append(
                 "<div class='col-md-3'>" +
                 "<div class='productbox'>"+
@@ -35,7 +35,11 @@ $.get("./PHP/getRanking.php", function(datas,status){
         }
 
 
-});
+    });
+
+}
+
+loadRanking();
 
 
 
