@@ -15,13 +15,11 @@ if (isset($_REQUEST['btn-login']))
 	$rows = pg_num_rows($result);
 
 	if ($rows==0) {
-	   	echo "<script>";
-        echo "window.location = 'http://localhost/Proyecto Web 2/index.html';";
-        echo "</script>";  
-        return;
+		devuelveMismaPaginaIndex();
 	}
 
 	$arr = pg_fetch_all($result);
+
 
 	if (is_array($arr))
 	{
@@ -31,10 +29,22 @@ if (isset($_REQUEST['btn-login']))
 				echo "<script>";
         		echo "window.location = 'http://localhost/Proyecto Web 2/menuPrincipal.html';";
         		echo "</script>";    
+        		return;
 			}
 		}
 	}
 
+	devuelveMismaPaginaIndex();
+
+}
+
+
+function devuelveMismaPaginaIndex(){
+	echo "<script>";
+	echo "alert('Invalid username or password');"; 
+    echo "window.location = 'http://localhost/Proyecto Web 2/index.html';";
+    echo "</script>";  
+    return;
 }
 
 ?>
