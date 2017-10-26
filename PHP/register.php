@@ -16,7 +16,6 @@ if (isset($_REQUEST['registrarUsuario']))
     $username=$_REQUEST['username'];
     $password =$_REQUEST['password'];
 
-
     $query = "select nombreDeUsuario from usuarios where nombreDeUsuario='$username'";
     $result=pg_query($globalConnection,$query);
     $rows = pg_numrows($result);

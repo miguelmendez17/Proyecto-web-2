@@ -1,4 +1,4 @@
-drop table Equipos
+drop table usuarios
 create table usuarios
 (
 	nombre		varchar(30)	not null,
@@ -11,230 +11,233 @@ create table usuarios
 	constraint 	pk_nombre_usuario	primary key (nombreDeUsuario)
 );
 
+drop table TEAMS
 create table TEAMS (
 	Country		varchar(30)	not null,
 	Confederation	varchar(30)	not null,
-	Points		int	not null
-
+	Points		int	not null,
+	activated	boolean
 );
 
+drop table flags
 create table flags (
 	name		varchar(100)	not null,
 	flag	varchar(100)	not null
 
 );
 
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Germany','UEFA',1606);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Brazil','CONMEBOL',1590);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Portugal','UEFA',1386);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Argentina','CONMEBOL',1325);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belgium','UEFA',1265);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Poland','UEFA',1250);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Switzerland','UEFA',1211);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('France','UEFA',1208);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chile','CONMEBOL',1195);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Colombia','CONMEBOL',1191);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Spain','UEFA',1184);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Peru','CONMEBOL',1103);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Wales','UEFA',1089);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mexico','CONCACAF',1085);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('England','UEFA',1056);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uruguay','CONMEBOL',1043);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Italy','UEFA',1035);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Croatia','UEFA',977);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Slovakia','UEFA',967);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Northern Ireland','UEFA',945);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Costa Rica','CONCACAF',936);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iceland','UEFA',931);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sweden','UEFA',918);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ukraine','UEFA',888);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iran','AFC',865);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Denmark','UEFA',848);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turkey','UEFA',842);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('USA','CONCACAF',828);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Netherlands','UEFA',819);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Egypt','CAF',815);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tunisia','CAF',810);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Serbia','UEFA',789);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Senegal','CAF',774);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Republic of Ireland','UEFA',769);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ecuador','CONMEBOL',767);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bosnia-Herzegovina','UEFA',761);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Montenegro','UEFA',749);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bulgaria','UEFA',739);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Paraguay','CONMEBOL',738);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Japan','AFC',737);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Romania','UEFA',714);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Congo DR','CAF',709);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Scotland','UEFA',702);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nigeria','CAF',696);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cameroon','CAF',689);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bolivia','CONMEBOL',666);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Greece','UEFA',665);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Haiti','CONCACAF',664);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Burkina Faso','CAF',663);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Australia','AFC',662);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Korea Republic','AFC',659);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ghana','CAF',646);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Saudi Arabia','AFC',641);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Germany','UEFA',1606,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Brazil','CONMEBOL',1590,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Portugal','UEFA',1386,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Argentina','CONMEBOL',1325,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Belgium','UEFA',1265,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Poland','UEFA',1250,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Switzerland','UEFA',1211,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('France','UEFA',1208,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Chile','CONMEBOL',1195,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Colombia','CONMEBOL',1191,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Spain','UEFA',1184,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Peru','CONMEBOL',1103,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Wales','UEFA',1089,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mexico','CONCACAF',1085,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('England','UEFA',1056,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Uruguay','CONMEBOL',1043,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Italy','UEFA',1035,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Croatia','UEFA',977,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Slovakia','UEFA',967,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Northern Ireland','UEFA',945,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Costa Rica','CONCACAF',936,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Iceland','UEFA',931,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Sweden','UEFA',918,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Ukraine','UEFA',888,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Iran','AFC',865,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Denmark','UEFA',848,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Turkey','UEFA',842,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('USA','CONCACAF',828,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Netherlands','UEFA',819,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Egypt','CAF',815,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Tunisia','CAF',810,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Serbia','UEFA',789,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Senegal','CAF',774,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Republic of Ireland','UEFA',769,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Ecuador','CONMEBOL',767,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bosnia-Herzegovina','UEFA',761,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Montenegro','UEFA',749,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bulgaria','UEFA',739,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Paraguay','CONMEBOL',738,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Japan','AFC',737,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Romania','UEFA',714,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Congo DR','CAF',709,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Scotland','UEFA',702,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Nigeria','CAF',696,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cameroon','CAF',689,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bolivia','CONMEBOL',666,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Greece','UEFA',665,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Haiti','CONCACAF',664,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Burkina Faso','CAF',663,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Australia','AFC',662,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Korea Republic','AFC',659,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Ghana','CAF',646,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Saudi Arabia','AFC',641,TRUE);
 
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Slovenia','UEFA',636);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Morocco','CAF',635);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Austria','UEFA',632);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Czech Republic','UEFA',630);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Hungary','UEFA',629);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Panama','CONCACAF',618);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Jamaica','CONCACAF',607);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('China PR','AFC',564);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Algeria','CAF',564);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Russia','UEFA',558);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guinea','CAF',554);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Albania','UEFA',551);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cape Verde Islands','CAF',548);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Venezuela','CONMEBOL',525);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uzbekistan','AFC',511);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cyprus','UEFA',487);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Uganda','CAF',486);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('United Arab Emirates','AFC',480);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Norway','UEFA',472);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Honduras','CONCACAF',467);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Syria','AFC',465);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mali','CAF',464);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belarus','UEFA',454);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Zambia','CAF',448);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gabon','CAF',430);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('South Africa','CAF',423);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Libya','CAF',422);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Israel','UEFA',420);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Armenia','UEFA',414);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Estonia','UEFA',413);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Qatar','AFC',406);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Curacao','CONCACAF',405);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Finland','UEFA',404);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Benin','CAF',400);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kenya','CAF',400);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Iraq','AFC',400);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Palestine','AFC',389);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Azerbaijan','UEFA',388);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Faroe Islands','UEFA',384);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guinea-Bissau','CAF',381);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Congo','CAF',378);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Canada','CONCACAF',368);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sierra Leone','CAF',366);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mauritania','CAF',365);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('El Salvador','CONCACAF',361);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Trinidad and Tobago','CONCACAF',361);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Luxembourg','UEFA',343);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Madagascar','CAF',343);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('FYR Macedonia','UEFA',328);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Georgia','UEFA',328);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Zimbabwe','CAF',326);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Niger','CAF',325);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('India','AFC',316);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mozambique','CAF',309);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nicaragua','CONCACAF',307);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Jordan','AFC',305);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Suriname','CONCACAF',303);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Oman','AFC',292);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('New Zealand','OFC',289);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Kitts and Nevis','CONCACAF',286);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lebanon','AFC',280);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malawi','CAF',278);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Antigua and Barbuda','CONCACAF',276);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Rwanda','CAF',273);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bahrain','AFC',273);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lithuania','UEFA',266);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Togo','CAF',263);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kyrgyzstan','AFC',260);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Philippines','AFC',259);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Korea DPR','AFC',259);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tanzania','CAF',256);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kazakhstan','UEFA',254);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Central African Republic','CAF',251);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Yemen','AFC',247);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Burundi','CAF',245);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Vietnam','AFC',241);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guatemala','CONCACAF',235);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Namibia','CAF',233);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Liberia','CAF',230);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sudan','CAF',228);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Equatorial Guinea','CAF',224);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turkmenistan','AFC',221);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Angola','CAF',219);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Thailand','AFC',219);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Swaziland','CAF',217);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tajikistan','AFC',214);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Comoros','CAF',204);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('New Caledonia','OFC',196);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Lesotho','CAF',193);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Andorra','UEFA',191);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Ethiopia','CAF',191);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Botswana','CAF',190);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Hong Kong','AFC',188);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Latvia','UEFA',182);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tahiti','OFC',181);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('South Sudan','CAF',177);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chinese Taipei','AFC',175);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Myanmar','AFC',172);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Chad','CAF',168);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Maldives','AFC',156);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Solomon Islands','OFC',153);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guyana','CONCACAF',148);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Moldova','UEFA',148);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Afghanistan','AFC',147);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Grenada','CONCACAF',141);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Dominican Republic','CONCACAF',140);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mauritius','CAF',136);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Singapore','AFC',134);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Puerto Rico','CONCACAF',132);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gambia','CAF',131);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Papua New Guinea','OFC',130);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Laos','AFC',126);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malaysia','AFC',126);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Belize','CONCACAF',118);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Indonesia','AFC',116);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Barbados','CONCACAF',115);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Dominica','CONCACAF',111);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cambodia','AFC',110);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Vincent and Grenadines','CONCACAF',107);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bhutan','AFC',102);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Nepal','AFC',101);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sao Tome e Principe','CAF',98);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Fiji','OFC',95);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('St. Lucia','CONCACAF',94);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Aruba','CONCACAF',92);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cuba','CONCACAF',88);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kuwait','AFC',75);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Macau','AFC',72);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bermuda','CONCACAF',72);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Kosovo','UEFA',67);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Djibouti','CAF',64);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Brunei Darussalam','AFC',62);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Liechtenstein','UEFA',56);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Vanuatu','OFC',51);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Guam','AFC',50);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Seychelles','CAF',48);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Malta','UEFA',44);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Timor-Leste','AFC',40);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('American Samoa','OFC',38);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cook Islands','OFC',38);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Samoa','OFC',38);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bangladesh','AFC',35);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Mongolia','AFC',30);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Sri Lanka','AFC',29);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('US Virgin Islands','CONCACAF',26);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Pakistan','AFC',20);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Montserrat','CONCACAF',20);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Turks and Caicos Islands','CONCACAF',13);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Cayman Islands','CONCACAF',13);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('San Marino','UEFA',10);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('British Virgin Islands','CONCACAF',6);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Tonga','OFC',0);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Eritrea','CAF',0);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Somalia','CAF',0);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Bahamas','CONCACAF',0);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Anguilla','CONCACAF',0);
-INSERT INTO TEAMS (Country, Confederation, Points) VALUES ('Gibraltar','UEFA',0);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Slovenia','UEFA',636,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Morocco','CAF',635,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Austria','UEFA',632,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Czech Republic','UEFA',630,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Hungary','UEFA',629,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Panama','CONCACAF',618,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Jamaica','CONCACAF',607,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('China PR','AFC',564,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Algeria','CAF',564,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Russia','UEFA',558,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Guinea','CAF',554,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Albania','UEFA',551,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cape Verde Islands','CAF',548,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Venezuela','CONMEBOL',525,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Uzbekistan','AFC',511,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cyprus','UEFA',487,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Uganda','CAF',486,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('United Arab Emirates','AFC',480,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Norway','UEFA',472,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Honduras','CONCACAF',467,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Syria','AFC',465,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mali','CAF',464,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Belarus','UEFA',454,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Zambia','CAF',448,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Gabon','CAF',430,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('South Africa','CAF',423,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Libya','CAF',422,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Israel','UEFA',420,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Armenia','UEFA',414,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Estonia','UEFA',413,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Qatar','AFC',406,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Curacao','CONCACAF',405,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Finland','UEFA',404,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Benin','CAF',400,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Kenya','CAF',400,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Iraq','AFC',400,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Palestine','AFC',389,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Azerbaijan','UEFA',388,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Faroe Islands','UEFA',384,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Guinea-Bissau','CAF',381,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Congo','CAF',378,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Canada','CONCACAF',368,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Sierra Leone','CAF',366,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mauritania','CAF',365,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('El Salvador','CONCACAF',361,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Trinidad and Tobago','CONCACAF',361,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Luxembourg','UEFA',343,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Madagascar','CAF',343,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('FYR Macedonia','UEFA',328,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Georgia','UEFA',328,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Zimbabwe','CAF',326,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Niger','CAF',325,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('India','AFC',316,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mozambique','CAF',309,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Nicaragua','CONCACAF',307,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Jordan','AFC',305,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Suriname','CONCACAF',303,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Oman','AFC',292,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('New Zealand','OFC',289,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('St. Kitts and Nevis','CONCACAF',286,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Lebanon','AFC',280,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Malawi','CAF',278,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Antigua and Barbuda','CONCACAF',276,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Rwanda','CAF',273,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bahrain','AFC',273,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Lithuania','UEFA',266,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Togo','CAF',263,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Kyrgyzstan','AFC',260,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Philippines','AFC',259,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Korea DPR','AFC',259,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Tanzania','CAF',256,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Kazakhstan','UEFA',254,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Central African Republic','CAF',251,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Yemen','AFC',247,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Burundi','CAF',245,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Vietnam','AFC',241,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Guatemala','CONCACAF',235,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Namibia','CAF',233,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Liberia','CAF',230,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Sudan','CAF',228,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Equatorial Guinea','CAF',224,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Turkmenistan','AFC',221,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Angola','CAF',219,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Thailand','AFC',219,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Swaziland','CAF',217,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Tajikistan','AFC',214,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Comoros','CAF',204,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('New Caledonia','OFC',196,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Lesotho','CAF',193,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Andorra','UEFA',191,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Ethiopia','CAF',191,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Botswana','CAF',190,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Hong Kong','AFC',188,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Latvia','UEFA',182,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Tahiti','OFC',181,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('South Sudan','CAF',177,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Chinese Taipei','AFC',175,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Myanmar','AFC',172,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Chad','CAF',168,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Maldives','AFC',156,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Solomon Islands','OFC',153,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Guyana','CONCACAF',148,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Moldova','UEFA',148,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Afghanistan','AFC',147,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Grenada','CONCACAF',141,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Dominican Republic','CONCACAF',140,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mauritius','CAF',136,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Singapore','AFC',134,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Puerto Rico','CONCACAF',132,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Gambia','CAF',131,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Papua New Guinea','OFC',130,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Laos','AFC',126,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Malaysia','AFC',126,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Belize','CONCACAF',118,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Indonesia','AFC',116,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Barbados','CONCACAF',115,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Dominica','CONCACAF',111,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cambodia','AFC',110,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('St. Vincent and Grenadines','CONCACAF',107,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bhutan','AFC',102,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Nepal','AFC',101,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Sao Tome e Principe','CAF',98,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Fiji','OFC',95,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('St. Lucia','CONCACAF',94,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Aruba','CONCACAF',92,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cuba','CONCACAF',88,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Kuwait','AFC',75,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Macau','AFC',72,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bermuda','CONCACAF',72,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Kosovo','UEFA',67,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Djibouti','CAF',64,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Brunei Darussalam','AFC',62,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Liechtenstein','UEFA',56,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Vanuatu','OFC',51,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Guam','AFC',50,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Seychelles','CAF',48,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Malta','UEFA',44,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Timor-Leste','AFC',40,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('American Samoa','OFC',38,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cook Islands','OFC',38,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Samoa','OFC',38,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bangladesh','AFC',35,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Mongolia','AFC',30,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Sri Lanka','AFC',29,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('US Virgin Islands','CONCACAF',26,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Pakistan','AFC',20,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Montserrat','CONCACAF',20,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Turks and Caicos Islands','CONCACAF',13,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Cayman Islands','CONCACAF',13,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('San Marino','UEFA',10,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('British Virgin Islands','CONCACAF',6,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Tonga','OFC',0,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Eritrea','CAF',0,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Somalia','CAF',0,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Bahamas','CONCACAF',0,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Anguilla','CONCACAF',0,TRUE);
+INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Gibraltar','UEFA',0,FALSE);
+
 
 INSERT INTO Flags (name, flag) VALUES ('Germany','//img.fifa.com/images/flags/4/ger.png');
 INSERT INTO Flags (name, flag) VALUES ('Brazil','//img.fifa.com/images/flags/4/bra.png');
@@ -450,11 +453,21 @@ INSERT INTO Flags (name, flag) VALUES ('Tonga','img.fifa.com/images/flags/4/tga.
 
 delete from TEAMS
 
-select nombreDeUsuario from usuarios
+
+
+
+select * from usuarios
+
+select * from Flags
+select * from TEAMS where(activated='FALSE') order by Country
+select * from TEAMS order by Country
 
 select * from flags as f
  inner join
- TEAMS as t on (f.name = t.Country) order by t.points DESC limit 100
+ TEAMS as t on (f.name = t.Country and t.activated=TRUE) order by t.points DESC limit 100
+
+ 
+UPDATE TEAMS SET activated = FALSE where Country = 'Albania';
 
 
 insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
