@@ -22,8 +22,9 @@ include './connectionPHP.php';
 	}
 
     else{
+    	$activated = TRUE;
 		$queryAddFlag = "insert into Flags VALUES ('$countryName','$countryImage');";
-		$queryAddCountry ="insert into TEAMS values('$countryName','$countryConfederation','$countryPoints');";
+		$queryAddCountry ="insert into TEAMS values('$countryName','$countryConfederation','$countryPoints','$activated');";
 
 	    $result1=pg_query($globalConnection,$queryAddCountry);
 	    $result2=pg_query($globalConnection,$queryAddFlag);

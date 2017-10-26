@@ -24,9 +24,9 @@
 		    </div>
 		    <ul class="nav navbar-nav">
 		      <li onclick="view(2);"><a href="#">Add Country</a></li>
-		      <li><a href="#">Modificar</a></li>
-		      <li><a href="#">Eliminar</a></li>
-		      <li><a href="#">Consultas</a></li>
+		      <li onclick="view(3);"><a href="#">Update Country</a></li>
+		      <li onclick="view(4);"><a href="#">Disable Country</a></li>
+			  <li onclick="view(5);"><a href="#">Enable Country</a></li>
 		    </ul>
 			<ul class="nav navbar-nav pull-right">
 	            <li class=""><a href="index.html">Logout</a></li>
@@ -74,6 +74,72 @@
 				      	</div>
 					</div>
 					<input class="btn btn-success" type="submit" value="Add Country">
+				</form>
+		</div>
+	</div>
+
+
+	<div id = "updateCountry" style='display:none'>
+	    <div class="container">
+			<h2>Add country </h2>
+			  	<form role="form" method="post" action="PHP/addCountry.php">
+				    <div class="form-group row">
+				    	<div class="col-xs-3">
+				        	<label for="ex1">Country name:</label>
+				        	<input name="countryName" class="form-control" id="countryName" type="text" required>
+				      	</div>
+
+				      	<div class="col-xs-2">
+				        	<label for="ex1">Points:</label>
+				        	<input name="countryPoints" class="form-control" id="pointsCountry" type="number" required>
+				      	</div>	
+				    </div>
+					<div class="form-group row">
+						<div class="col-xs-5">
+				        	<label for="ex1">Image URL</label>
+				        	<input name="countryImage" class="form-control" id="countryImage" type="text" required>
+				      	</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-xs-5">
+							<label for="ex1">Confederation</label>
+				        	<select name="countryConfederation" id ="loadConfederations" class="form-control form-control-sm" required>
+							</select>
+				      	</div>
+					</div>
+					<input class="btn btn-success" type="submit" value="Add Country">
+				</form>
+		</div>
+	</div>
+
+
+	<div id = "diableCountry" style='display:none'>
+	    <div class="container">
+			<h2>Disable country </h2>
+			  	<form role="form" method="post" action="PHP/disableCountry.php">
+				    <div class="form-group row">
+				    	<div class="col-xs-3">
+				        	<label for="ex1">Country name to disable:</label>
+				        	<input name="countryNameDisable" class="form-control" id="countryNameDisable" type="text" required>
+				      	</div>
+				    </div>
+					<input class="btn btn-danger" type="submit" value="Disable Country">
+				</form>
+		</div>
+	</div>
+
+	<div id = "enableCountry" style='display:none'>
+	    <div class="container">
+			<h2>Enable country </h2>
+			  	<form role="form" method="post" action="PHP/enableCountry.php">
+				    <div class="form-group row">
+				    	<div class="col-xs-3">
+				        	<label for="ex1">Country name to enable:</label>
+				        	<input name="countryNameEnable" class="form-control" id="countryNameEnable" type="text" required>
+				      	</div>
+				    </div>
+					<input class="btn btn-success" type="submit" value="Enable Country">
 				</form>
 		</div>
 	</div>
