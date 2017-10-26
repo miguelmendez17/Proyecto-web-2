@@ -11,7 +11,7 @@ $.get("./PHP/getRanking.php", function(datas,status){
     var data = JSON.parse(datas);
     console.log(data[1].name);
   $("#content").empty();
-    for(var i=0; i < 10 ; i++){
+    for(var i=0; i < 100 ; i++){
             $('#content').append(
                 "<div class='col-md-3'>" +
                 "<div class='productbox'>"+
@@ -23,7 +23,7 @@ $.get("./PHP/getRanking.php", function(datas,status){
                 "<p class='text-justify'>Points "+data[i].points+"</p>"+
                 "<div class='productprice'>"+
                 "<div class='pull-right'>"+
-                "<a href='#' onclick='' class='btn btn-warning btm-sm' role='button'>Wish<span class='glyphicon glyphicon-heart'></span></a>"+
+                "<a href='#' onclick='' class='btn btn-warning btm-sm' role='button'>Activate<span class='glyphicon glyphicon-heart'></span></a>"+
                 "</div>"+
 
                 "<div class='pricetext' >"+
