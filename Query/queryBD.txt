@@ -1,3 +1,4 @@
+drop table usuarios
 create table usuarios
 (
 	nombre		varchar(30)	not null,
@@ -21,9 +22,11 @@ create table TEAMS (
 drop table flags
 create table flags (
 	name		varchar(100)	not null,
-	flag	varchar(100)	not null
+	flag	varchar(10000)	not null
 
 );
+
+---- ************** es importante que cree las tablas y luego le inserte los valores para probarlo*********************
 
 INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Germany','UEFA',1606,TRUE);
 INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Brazil','CONMEBOL',1590,TRUE);
@@ -450,24 +453,6 @@ INSERT INTO Flags (name, flag) VALUES ('Gibraltar','//img.fifa.com/images/flags/
 INSERT INTO Flags (name, flag) VALUES ('Somalia','//img.fifa.com/images/flags/4/som.png');
 INSERT INTO Flags (name, flag) VALUES ('Tonga','img.fifa.com/images/flags/4/tga.png');
 
-delete from TEAMS
-
-
-
-
-select * from usuarios
-
-select * from Flags
-select * from TEAMS where(activated='FALSE') order by Country
-select * from TEAMS order by Country
-
-select * from flags as f
- inner join
- TEAMS as t on (f.name = t.Country and t.activated=TRUE) order by t.points DESC limit 100
-
- 
-UPDATE TEAMS SET activated = FALSE where Country = 'Albania';
-
 
 insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
 values
@@ -477,6 +462,40 @@ values
 insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
 values
 ('Kenneth','Alvarez Esquivel',21, 'kenalv','12345',now(),now())
+
+
+delete from TEAMS
+delete from Flags
+
+
+
+select * from usuarios
+
+select * from Flags
+select Country from TEAMS where(activated='TRUE')
+
+select * from TEAMS order by Country
+
+select * from flags as f
+ inner join
+ TEAMS as t on (f.name = t.Country and t.activated=TRUE) order by t.points DESC limit 100
+
+
+select * from flags as f
+ inner join
+ TEAMS as t on (f.name=t.Country and f.name='Costa Rica')
+ 
+
+update TEAMS set Points=192 where Country = 'Costa Rica'
+update Flags set flag='fdsd' where name = 'Costa Rica' 
+
+ select Country from TEAMS where Country = 'Costa Rica'
+
+ 
+UPDATE TEAMS SET activated = FALSE where Country = 'Albania'
+
+
+
 
 select nombreDeUsuario from usuarios where nombreDeUsuario='miguelmendez'
 select nombreDeUsuario, contrasenna from usuarios where (nombreDeUsuario='miguelmendez')

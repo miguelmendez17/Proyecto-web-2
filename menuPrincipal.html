@@ -22,7 +22,7 @@
 		    </div>
 		    <ul class="nav navbar-nav">
 		      <li onclick="view(2);"><a href="#">Add Country</a></li>
-		      <li onclick="view(3);"><a href="#">Update Country</a></li>
+		      <li onclick="view(3);updateCountry();"><a href="#">Update Country</a></li>
 		      <li onclick="view(4);"><a href="#">Disable Country</a></li>
 			  <li onclick="view(5);"><a href="#">Enable Country</a></li>
 		    </ul>
@@ -78,14 +78,34 @@
 	<div id = "updateCountry" style='display:none'>
 	    <div class="container">
 			<h2>Update country </h2>
-			  	<form role="form" method="post" action="PHP/addCountry.php">
+			  	<form role="form" method="post">
 				    <div class="form-group row">
-				    	<div class="col-xs-3">
-				        	<label for="ex1">Country name:</label>
-				        	<input name="countryName" class="form-control" id="countryName" type="text" required>
+				    	<div class="col-xs-5">
+							<label for="ex1">Countries</label>
+				        	<select name="countryNameUpdate" id ="countryNameUpdate" class="form-control form-control-sm" required>
+							</select>
 				      	</div>
 					</div>
-					<input class="btn btn-success" type="submit" value="Search Country">
+					<input id="btnSearch" class="btn btn-success" type="button" value="Search Country"><br><br>
+
+					<div class="form-group row">
+						<div class="col-xs-2">
+				        	<label for="ex1">Points:</label>
+				        	<input name="countryPoints" class="form-control" id="pointsCountryUpdate" type="text" required>
+				      	</div>	
+		
+						<div class="col-xs-3">
+			        		<label for="ex1">Image URL</label>
+			        		<input name="countryImage" class="form-control" id="countryImageUpdate" type="text" required="">
+			      		</div>
+				    </div>
+				    <div class="form-group row">
+						<div class="col-xs-2">
+							<img id="img-Update" src="" alt="Country IMG">
+				        </div>
+				    </div><br><br>
+				    <input id="btnUpdate" class="btn btn-info" type="button" value="Update country"><br>
+
 				</form>
 		</div>
 	</div>
