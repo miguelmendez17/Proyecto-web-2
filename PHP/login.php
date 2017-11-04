@@ -2,7 +2,7 @@
 
 include './connectionPHP.php';
 
-	$connectionConflict  = 'http://localhost/Proyecto Web 2/menuPrincipal.html';
+	$connectionConflict  = 'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html';
 
 if (isset($_REQUEST['btn-login']))
 {
@@ -16,7 +16,7 @@ if (isset($_REQUEST['btn-login']))
 	$rows = pg_num_rows($result);
 
 	if ($rows==0) {
-		devuelveMismaPaginaIndex();
+		devuelveMismaPaginaIndex($connectionConflict);
 	}
 
 	$arr = pg_fetch_all($result);
@@ -33,11 +33,11 @@ if (isset($_REQUEST['btn-login']))
 			}
 		}
 	}
-	devuelveMismaPaginaIndex();
+	devuelveMismaPaginaIndex($connectionConflict);
 }
 
 
-function devuelveMismaPaginaIndex(){
+function devuelveMismaPaginaIndex($connectionConflict){
 	echo "<script>";
 	echo "alert('Invalid username or password');"; 
     echo "window.location = '" .$connectionConflict."'";

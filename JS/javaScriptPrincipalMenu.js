@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 function view(divID)
 {
-    var variables=new Array("home","addCountry","updateCountry","diableCountry","enableCountry");
+    var variables=new Array("home","addCountry","updateCountry","diableCountry","enableCountry","newTournament");
 
     for (i=0;i<variables.length;i++){
         if(divID==i+1){
@@ -52,6 +52,7 @@ function updateCountry(){
 
 });
 }
+
 
 
 $(document).on('click', '#btnSearch', function () {
