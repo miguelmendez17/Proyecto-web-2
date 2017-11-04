@@ -16,7 +16,7 @@ if (isset($_REQUEST['btn-login']))
 	$rows = pg_num_rows($result);
 
 	if ($rows==0) {
-		devuelveMismaPaginaIndex();
+		devuelveMismaPaginaIndex($connectionConflict);
 	}
 
 	$arr = pg_fetch_all($result);
@@ -27,20 +27,20 @@ if (isset($_REQUEST['btn-login']))
 			if($array['nombredeusuario'] == $username && $array['contrasenna']==$password)
 			{
 				echo "<script>";
-        		echo "window.location = '" .$connectionConflict."'";
+        		echo "window.location = 'http://localhost/Proyecto Web 2/menuPrincipal.html'";
         		echo "</script>";    
         		return;
 			}
 		}
 	}
-	devuelveMismaPaginaIndex();
+	devuelveMismaPaginaIndex($connectionConflict);
 }
 
 
-function devuelveMismaPaginaIndex(){
+function devuelveMismaPaginaIndex($connectionConflict){
 	echo "<script>";
 	echo "alert('Invalid username or password');"; 
-    echo "window.location = '" .$connectionConflict."'";
+    echo "window.location = 'http://localhost/Proyecto Web 2/index.html'";
     echo "</script>";  
     return;
 }

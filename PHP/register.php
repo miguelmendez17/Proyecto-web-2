@@ -4,9 +4,10 @@ include './connectionPHP.php';
 
 if (isset($_REQUEST['cancelRegister']))
 {
-    header($redirectToIndex,false);
+    echo "<script>";
+    echo "window.location = 'http://localhost/Proyecto Web 2/index.html';";
+    echo "</script>";  
 }
-
 
 if (isset($_REQUEST['registrarUsuario']))
 {

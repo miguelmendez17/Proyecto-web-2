@@ -2,7 +2,7 @@
 
 include './connectionPHP.php';
 
-	$countryNameDisable=$_REQUEST['countryNameDisable'];
+	$countryNameDisable=$_REQUEST['countryNameToDisable'];
 
     $query = "select Country from TEAMS where Country='$countryNameDisable'";
 

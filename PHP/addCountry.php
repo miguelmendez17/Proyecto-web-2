@@ -16,6 +16,7 @@ include './connectionPHP.php';
 	if($rows>0){	
 		echo "That country already exists";
 	} 
+
 	else{
 		$activated = TRUE;
 		$queryAddFlag = "insert into Flags VALUES ('$countryName','$countryImage');";
@@ -23,7 +24,8 @@ include './connectionPHP.php';
 
 	    $result1=pg_query($globalConnection,$queryAddCountry);
 	    $result2=pg_query($globalConnection,$queryAddFlag);
-
+	    
 		echo json_encode("Inserted successfully");
 	}	
+
 ?>
