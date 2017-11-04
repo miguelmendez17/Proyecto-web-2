@@ -65,6 +65,7 @@ function updateCountry(){
 }
 
 function updateCountryDisable(){
+    $("#countryNameToDisable").clear();
         $.ajax({ 
             type: "GET", 
             url: './PHP/updateCountry.php',

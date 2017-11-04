@@ -45,8 +45,8 @@
 }
 .container-fluid{
     width: 100%;
-    overflow: hidden;
 }
+
 .productprice {
     border-top:1px solid #dadada;
     padding-top:5px;
