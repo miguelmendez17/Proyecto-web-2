@@ -22,7 +22,7 @@
 
 }
 
-.team-selected{
+.team-selected,.team-repechaje{
 	float: left;
 	width: 70px;
 	height: 31px;
