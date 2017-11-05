@@ -117,7 +117,7 @@ function updateCountryEnable(){
                     $("#countryNameToActivate").append($("<option>", {text : value.country
                 }));   
                 });  
-        }
+            }
         }); 
 }
 

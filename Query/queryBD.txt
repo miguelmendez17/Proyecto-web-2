@@ -35,6 +35,10 @@ create table confederations(
 );
 
 
+----
+
+[{"name":"Japan","flag":"//img.fifa.com/images/flags/4/jpn.png","result":""},{"name":"Panama","flag":"//img.fifa.com/images/flags/4/pan.png","result":""},{"name":"Honduras","flag":"//img.fifa.com/images/flags/4/hon.png","result":""},{"name":"Paraguay","flag":"//img.fifa.com/images/flags/4/par.png","result":""},{"name":"New Zealand","flag":"//img.fifa.com/images/flags/4/nzl.png","result":""},{"name":"England","flag":"//img.fifa.com/images/flags/4/eng.png","result":""},{"name":"Netherlands","flag":"//img.fifa.com/images/flags/4/ned.png","result":""},{"name":"Faroe Islands","flag":"//img.fifa.com/images/flags/4/fro.png","result":""},{"name":"Northern Ireland","flag":"//img.fifa.com/images/flags/4/nir.png","result":""},{"name":"Norway","flag":"//img.fifa.com/images/flags/4/nor.png","result":""},{"name":"Croatia","flag":"//img.fifa.com/images/flags/4/cro.png","result":""},{"name":"Sweden","flag":"//img.fifa.com/images/flags/4/swe.png","result":""},{"name":"Republic of Ireland","flag":"//img.fifa.com/images/flags/4/irl.png","result":""}]
+
 ---- ************** es importante que cree las tablas y luego le inserte los valores para probarlo*********************
 
 INSERT INTO TEAMS (Country, Confederation, Points, activated) VALUES ('Germany','UEFA',1606,TRUE);

@@ -2,6 +2,10 @@
 
 var listaDirectos = [];
 var listaRepechaje = [];
+
+localStorage.removeItem("repechajes");
+localStorage.removeItem("directos");
+
 $(document).on('click', '#createTournament', function () {
     var totalCountries = 0;
     var totalCountriesRepechajeSelected = 39;

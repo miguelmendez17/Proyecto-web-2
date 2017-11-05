@@ -13,7 +13,7 @@ $(document).on('click', '#btn-login', function () {
    	var userNameField = $("#fieldUsername").val();
     var passwordField = $("#fieldPassword").val();
 
-    if(userNameField==""||passwordField==""){
+    if(userNameField=="" || passwordField==""){
     	return;
     }
 
