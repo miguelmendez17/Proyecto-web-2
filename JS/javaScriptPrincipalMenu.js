@@ -144,6 +144,11 @@ $(document).on('click', '#btnUpdate', function () {
     var countryImage = $("#countryImageUpdate").val();
     var countryPoints = $("#pointsCountryUpdate").val();
     var countryName = $("#countryNameUpdate").val();
+
+    if(countryImage==""||countryPoints==""){
+        return;
+    }
+
     $.ajax({
         url: "./PHP/updateCountryFinal.php?",
         type: "post",
