@@ -1,0 +1,21 @@
+table, td{
+    border: 1px solid #ddd;
+    margin:60px;
+    padding: 20px;
+}
+
+
+th{
+	margin: 20px;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
