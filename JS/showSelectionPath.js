@@ -56,7 +56,7 @@ function loadAllTeams(){
         success: function(data){
             var countries = JSON.parse(data);
             $.each(countries, function(index, value){
-                $('#ALLCountries').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="'+ value.name +'" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+                $('#ALLCountries').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="'+ value.name+'" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
             });
         }
     });
@@ -69,7 +69,7 @@ function loadTEAMSNewTour() {
     var categorias = ["CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA"];
     $.each(categorias, function(i, team){
         $('#'+team+'').empty();
-
+         $('#ALLCountries').empty();
 
 // se encarga de agregar los equipos de cada confederacion,
         $.ajax({

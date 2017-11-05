@@ -21,6 +21,24 @@ function view(divID)
     }
 }
 
+
+
+
+$(document).on('click', '#btn-addHost', function () {
+    var found = $("#host").find("img");
+    if (found.length == 0) {
+        return;
+    }            
+
+    else{
+        $('#ALLCountries').empty();
+        view(6);  
+    }
+  
+});
+
+
+
 function addCountry(){
     var countryName = $("#countryName").val();
     var countryPoints = $("#pointsCountry").val();
