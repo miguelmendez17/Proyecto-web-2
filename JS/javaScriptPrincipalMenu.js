@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 function view(divID)
 {
-    var variables=new Array("home","addCountry","updateCountry","diableCountry","enableCountry","newTournament");
+    var variables=new Array("home","addCountry","updateCountry","diableCountry","enableCountry","newTournament","chooseHostID");
 
     for (i=0;i<variables.length;i++){
         if(divID==i+1){

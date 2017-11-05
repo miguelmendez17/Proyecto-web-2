@@ -23,8 +23,7 @@
 		      <li onclick="view(3);updateCountry();"><a href="#">Update Country</a></li>
 		      <li onclick="view(4);updateCountryDisable();"><a href="#">Disable Country</a></li>
 			  <li onclick="view(5);updateCountryEnable();"><a href="#">Enable Country</a></li>
-			  <li onclick="location.href='createTournament.html'"><a href="#">Create tournament</a></li>
-			  <li onclick="view(6);loadTEAMSNewTour();"><a href="#">New Tournament</a></li>
+			  <li onclick="view(7);loadAllTeams();"><a href="#">New Tournament</a></li>
 
 		    </ul>
 			<ul class="nav navbar-nav pull-right">
@@ -143,106 +142,127 @@
 				</form>
 		</div>
 	</div>
+
+	<div id="chooseHostID" style='display: none'>
+		<div class='confederations-container'>
+			<div class="form-group row">
+					<h2 style="margin-left: 20px;">Choose the host:</h2>
+						<h4>Countries</h4>
+						<div class="team-holder" id="ALLCountries">
+						</div>
+						<h4 style="margin-left: 60px;">Host</h4>
+						<div class="team-selector" id="ALL-selec">
+							<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</div>
+						<hr><br>
+						<button align="center">Add host</button>
+			</div>
+		</div>
+	</div>
+
 	<div id = "newTournament" style='display:none'>
 		<div class='confederations-container'>
-			<h2>Confederations </h2>
-
-			<h4>AFC:</h4>
-			<hr>
-			<div class="team-holder" id="AFC">
-
-
-			</div>
-			<div class="team-selector" id="AFC-selec">
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-			</div>
-			<hr>
-			<h4>CONCACAF:</h4>
-			<hr>
-			<div class="team-holder" id="CONCACAF">
-
-			</div>
-			<div class="team-selector" id="CONCACAF-selec">
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-			</div>
-			<hr>
-
-			<h4>CAF:</h4>
-			<hr>
-			<div class="team-holder" id="CAF">
+			 <div class="form-group row">
+				<h2 style="margin-left: 20px;">Confederations </h2>
+					<h4>AFC:</h4>
+					<div class="team-holder" id="AFC">
+					</div>
+					<div class="team-selector" id="AFC-selec">
+						<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</div>
+					<hr><br>
 			</div>
 
-			<div class="team-selector" id="CAF-select">
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="form-group row">
+				<h4>CONCACAF:</h4>
+				<div class="team-holder" id="CONCACAF">
 
-			</div>
-			<hr>
+				</div>
+				<div class="team-selector" id="CONCACAF-selec">
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				
+				</div>
+				<hr><br>
+			</div >
 
-			<h4>CONMEBOL:</h4>
-			<hr>
-			<div class="team-holder" id="CONMEBOL">
+			<div class="form-group row">
+				<h4>CAF:</h4>
+				<div class="team-holder" id="CAF">
+				</div>
 
-			</div>
-			<div class="team-selector" id="CONMEBOL-selec">
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<div class="team-selector" id="CAF-select">
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-			</div>
-			<hr>
-
-			<h4>OFC:</h4>
-			<hr>
-			<div class="team-holder" id="OFC">
-
-			</div>
-			<div class="team-selector" id="OFC-selec">
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				</div>
+				<hr><br>
 			</div>
 
-			<hr>
-			<h4>UEFA:</h4>
-			<hr>
-			<div class="team-holder" id="UEFA">
+			
+			<div class="form-group row">
+				<h4>CONMEBOL:</h4>
+				<div class="team-holder" id="CONMEBOL">
 
+				</div>
+				<div class="team-selector" id="CONMEBOL-selec">
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
+				</div>
+				<hr><br>
 			</div>
-			<div class="team-selector" id="UEFA-selec">
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+			<div class="form-group row">
+				<h4>OFC:</h4>
+				<div class="team-holder" id="OFC">
+				</div>
+				<div class="team-selector" id="OFC-selec">
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				</div>
 			</div>
+
+			<div class="form-group row">
+				<h4>UEFA:</h4>
+					<div class="team-holder" id="UEFA">
+					</div>
+				<div class="team-selector" id="UEFA-selec">
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					<div class="team-repechaje" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				</div>
 
 		</div>
+		</div>
+	
 	</div>
 
 

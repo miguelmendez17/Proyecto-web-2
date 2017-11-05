@@ -6,6 +6,12 @@
 .confederations-container{
 	overflow: auto;
 }
+
+#newTournament,#chooseHostID{
+	margin-left: 40px;
+}
+
+
 .confederations-container .team-holder{
 	overflow: auto;
 	width: 70%;
