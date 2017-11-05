@@ -25,18 +25,19 @@ function view(divID)
 
 
 $(document).on('click', '#btn-addHost', function () {
+    localStorage.removeItem("host");
     var found = $("#host").find("img");
     if (found.length == 0) {
         return;
     }            
 
     else{
-        $("#host img").each(function(){
-            var nombre = $(this).attr('title');
+        $('#host img').each(function(){
+            var nombre = $(this).attr('id');
+            localStorage.setItem("host",nombre);
         })
-       
-        alert(nombre);
         $('#ALLCountries').empty();
+        loadTEAMSNewTour();
         view(6);  
     }
   

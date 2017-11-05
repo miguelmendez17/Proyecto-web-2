@@ -67,7 +67,7 @@ function loadAllTeams(){
 
 function loadTEAMSNewTour() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
-    var cont = 0;
+    var countryHost = localStorage.getItem("host");
     var categorias = ["CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA"];
     $.each(categorias, function(i, team){
         $('#'+team+'').empty();
@@ -81,8 +81,10 @@ function loadTEAMSNewTour() {
             success: function(data){
                 var countries = JSON.parse(data);
                 $.each(countries, function(index, value){
-                    $('#'+team+'').append('<abbr title="'+value.country+'"><img src="'+ value.flag +'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="'+ value.country +'" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
-                    cont = cont +1;
+                    if(countryHost!=value.country){
+                        $('#'+team+'').append('<abbr title="'+value.country+'"><img src="'+ value.flag +'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="'+ value.country +'" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+                    }
+                   
                 });
             }
         });
@@ -91,4 +93,3 @@ function loadTEAMSNewTour() {
     });
 }
 
-loadTEAMSNewTour();
