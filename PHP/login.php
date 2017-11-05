@@ -4,6 +4,7 @@ include './connectionPHP.php';
 
 	$connectionConflict  = 'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html';
 
+//si el valor es del boton login, entonces hace todo lo que está aquí dentro.
 if (isset($_REQUEST['btn-login']))
 {
 	$username=$_REQUEST['fieldUsername'];
@@ -16,6 +17,7 @@ if (isset($_REQUEST['btn-login']))
 	$rows = pg_num_rows($result);
 
 	if ($rows==0) {
+		//recargar la pagina y lo deja en la misma, para que vuelva a ingresar datos para verificar sesión.
 		devuelveMismaPaginaIndex($connectionConflict);
 	}
 
@@ -23,6 +25,7 @@ if (isset($_REQUEST['btn-login']))
 	
 	if (is_array($arr))
 	{
+		//valida el inicio de sesión conforme a lo que digitó el usuario.. 
     	foreach($arr as $array){
 			if($array['nombredeusuario'] == $username && $array['contrasenna']==$password)
 			{
@@ -36,7 +39,7 @@ if (isset($_REQUEST['btn-login']))
 	devuelveMismaPaginaIndex($connectionConflict);
 }
 
-
+//función que devuelve a la pagina index, o sea, al login.
 function devuelveMismaPaginaIndex($connectionConflict){
 	echo "<script>";
 	echo "alert('Invalid username or password');"; 
