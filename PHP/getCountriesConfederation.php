@@ -26,7 +26,7 @@
     }
 
     if($allcountries=="yes"){
-        $queryUpdatePoints = "select flag,name from Flags";
+        $queryUpdatePoints = "select f.flag,f.name from Flags as f inner join TEAMS as t on (t.activated='TRUE' and f.name=t.Country)";
         $result=pg_query($globalConnection,$queryUpdatePoints);
         $rows = pg_num_rows($result);
         if ($rows==0) {

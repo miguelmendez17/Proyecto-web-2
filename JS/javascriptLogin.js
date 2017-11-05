@@ -31,8 +31,6 @@ $(document).on('click', '#btn-login', function () {
 		        alert("no sirve");
 		    }
 	});
-
-   	alert("termina");
 });
 
 

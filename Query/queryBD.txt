@@ -26,27 +26,13 @@ create table flags (
 
 );
 
+drop table confederations
 create table confederations(
 	id		varchar(100)	not null,
 	confederation	varchar(100)	not null,
 	slot		int	not null,
 	slotReserv	int	not null
 );
-
-insert into confederations(id,confederation,slot,slotReserv) values ('CAF','Confederación Africana de Fútbol',5,0)
-insert into confederations(id,confederation,slot,slotReserv) values ('CONCACAF','onfederación de Norteamérica, Centroamérica y el Caribe de Fútbol',3,1)
-insert into confederations(id,confederation,slot,slotReserv) values ('CONMEBOL','Confederación Sudamericana de Fútbol',4,1)
-insert into confederations(id,confederation,slot,slotReserv) values ('OFC','	Confederación de Fútbol de Oceanía',0,1)
-insert into confederations(id,confederation,slot,slotReserv) values ('AFC','Confederación Asiática de Fútbol',4,1)
-insert into confederations(id,confederation,slot,slotReserv) values ('UEFA','Unión de Asociaciones Europeas de Fútbol',9,8)
-
-
-SELECT TEAMS.country, flags.flag, confederations.id
-FROM TEAMS
-INNER JOIN flags
-ON TEAMS.country = flags.name
-INNER JOIN confederations
-ON confederations.id = TEAMS.confederation and confederations.id = 'AFC'
 
 
 ---- ************** es importante que cree las tablas y luego le inserte los valores para probarlo*********************
@@ -474,27 +460,34 @@ INSERT INTO Flags (name, flag) VALUES ('Bahamas','//img.fifa.com/images/flags/4/
 INSERT INTO Flags (name, flag) VALUES ('Eritrea','//img.fifa.com/images/flags/4/eri.png');
 INSERT INTO Flags (name, flag) VALUES ('Gibraltar','//img.fifa.com/images/flags/4/gib.png');
 INSERT INTO Flags (name, flag) VALUES ('Somalia','//img.fifa.com/images/flags/4/som.png');
-INSERT INTO Flags (name, flag) VALUES ('Tonga','img.fifa.com/images/flags/4/tga.png');
-
-
-insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
-values
-('Miguel','Méndez Rojas',21, 'miguelmendez','mendez',now(),now())
-
+INSERT INTO Flags (name, flag) VALUES ('Tonga','//img.fifa.com/images/flags/4/tga.png');
 
 insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
-values
-('Kenneth','Alvarez Esquivel',21, 'kenalv','12345',now(),now())
+values('Miguel','Méndez Rojas',21, 'miguelmendez','mendez',now(),now());
+insert into usuarios(nombre,apellido,edad,nombreDeUsuario,contrasenna, fechaRegistro, horaRegistro)
+values('Kenneth','Alvarez Esquivel',21, 'kenalv','12345',now(),now());
+
+
+
+insert into confederations(id,confederation,slot,slotReserv) values ('CAF','Confederación Africana de Fútbol',5,0);
+insert into confederations(id,confederation,slot,slotReserv) values ('CONCACAF','onfederación de Norteamérica, Centroamérica y el Caribe de Fútbol',3,1);
+insert into confederations(id,confederation,slot,slotReserv) values ('CONMEBOL','Confederación Sudamericana de Fútbol',4,1);
+insert into confederations(id,confederation,slot,slotReserv) values ('OFC','	Confederación de Fútbol de Oceanía',0,1);
+insert into confederations(id,confederation,slot,slotReserv) values ('AFC','Confederación Asiática de Fútbol',4,1);
+insert into confederations(id,confederation,slot,slotReserv) values ('UEFA','Unión de Asociaciones Europeas de Fútbol',9,8);
 
 
 delete from TEAMS
 delete from Flags
+delete from confederations
 
 
 
 select * from usuarios
+select * from confederations 
+select * from TEAMS where Country='Tonga'
+select flag,name from Flags
 
-select * from Flags
 select Country from TEAMS where(activated='TRUE')
 
 select * from TEAMS order by Country
@@ -517,8 +510,9 @@ update Flags set flag='fdsd' where name = 'Costa Rica'
  
 UPDATE TEAMS SET activated = FALSE where Country = 'Albania'
 
-
-
+select f.flag,f.name from Flags as f inner join TEAMS as t on (t.activated='TRUE' and f.name=t.Country)
+ 
+select * from TEAMS where (activated='TRUE')
 
 --CONFEDERACIONES PARA LA SELECCION DE LOS EQUIPOS QUE VAN A PARTICIPAR
 SELECT TEAMS.country, flags.flag, confederations.id
@@ -531,3 +525,7 @@ ON confederations.id = TEAMS.confederation and confederations.id = 'AFC'
 
 select nombreDeUsuario from usuarios where nombreDeUsuario='miguelmendez'
 select nombreDeUsuario, contrasenna from usuarios where (nombreDeUsuario='miguelmendez')
+
+
+select TEAMS.country, flags.flag, confederations.confederation FROM TEAMS INNER JOIN 
+flags ON TEAMS.country = flags.name INNER JOIN confederations ON confederations.confederation = TEAMS.confederation

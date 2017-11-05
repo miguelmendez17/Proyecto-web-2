@@ -25,7 +25,7 @@ include './connectionPHP.php';
 	    $result1=pg_query($globalConnection,$queryAddCountry);
 	    $result2=pg_query($globalConnection,$queryAddFlag);
 	    
-		echo json_encode("Inserted successfully");
+	     echo json_encode("Inserted successfully", JSON_FORCE_OBJECT);
 	}	
 
 ?>

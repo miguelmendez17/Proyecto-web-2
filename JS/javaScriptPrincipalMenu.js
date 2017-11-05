@@ -59,11 +59,13 @@ function addCountry(){
     $.ajax({
         url: "PHP/addCountry.php?",
         type: "post",
+        dataType: "text",
+        async:false,
         data: {name:countryName, points:countryPoints, 
                image: countryImage, confederations:loadConfederations},
-        success: function(data){
-            alert(data); 
-       }
+        success: function(datas){
+            alert(datas); 
+       },
     });
 
     $("countryName").empty();
@@ -76,7 +78,8 @@ function updateCountry(){
         $.ajax({ 
             type: "GET", 
             url: './PHP/updateCountry.php',
-            data: {peticion:"updateCargar"},   
+            data: {peticion:"updateCargar"}, 
+            async:false,  
             success: function(data) {  
                 var countries = JSON.parse(data);
                 $.each(countries, function(index, value){
@@ -144,6 +147,7 @@ $(document).on('click', '#btnUpdate', function () {
     $.ajax({
         url: "./PHP/updateCountryFinal.php?",
         type: "post",
+        async:false,
         data: {countryIMG: countryImage, countryP: countryPoints,countryN: countryName},
         success: function(data){
             alert(data);
