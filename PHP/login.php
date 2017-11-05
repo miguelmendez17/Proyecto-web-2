@@ -27,7 +27,7 @@ if (isset($_REQUEST['btn-login']))
 			if($array['nombredeusuario'] == $username && $array['contrasenna']==$password)
 			{
 				echo "<script>";
-        		echo "window.location = '" .$connectionConflict."'";
+        		echo "window.location = 'http://localhost/Proyecto Web 2/menuPrincipal.html'";
         		echo "</script>";    
         		return;
 			}
@@ -40,7 +40,7 @@ if (isset($_REQUEST['btn-login']))
 function devuelveMismaPaginaIndex($connectionConflict){
 	echo "<script>";
 	echo "alert('Invalid username or password');"; 
-    echo "window.location = '" .$connectionConflict."'";
+    echo "window.location = 'http://localhost/Proyecto Web 2/index.html'";
     echo "</script>";  
     return;
 }

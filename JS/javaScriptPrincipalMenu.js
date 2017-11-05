@@ -25,6 +25,12 @@ function addCountry(){
     var countryName = $("#countryName").val();
     var countryPoints = $("#pointsCountry").val();
     var countryImage = $("#countryImage").val();
+
+    if(countryName=="" || countryPoints=="" ||countryImage==""){
+        alert("You must complete all the fields");
+        return;
+    }
+
     var loadConfederations = $("#loadConfederations").val();
     $.ajax({
         url: "PHP/addCountry.php?",
@@ -43,14 +49,51 @@ function addCountry(){
 
 
 function updateCountry(){
-    $.get("./PHP/updateCountry.php", function(datas){
-        var countries = JSON.parse(datas);
-        $.each(countries, function(index, value){
-            $("#countryNameUpdate").append($("<option>", {text : value.country
-        }));
-    });
 
-});
+        $.ajax({ 
+            type: "GET", 
+            url: './PHP/updateCountry.php',
+            data: {peticion:"updateCargar"},   
+            success: function(data) {  
+                var countries = JSON.parse(data);
+                $.each(countries, function(index, value){
+                    $("#countryNameUpdate").append($("<option>", {text : value.country
+                }));   
+                });  
+        }
+        }); 
+}
+
+function updateCountryDisable(){
+    $("#countryNameToDisable").clear();
+        $.ajax({ 
+            type: "GET", 
+            url: './PHP/updateCountry.php',
+            data: {peticion:"updateDisable"},   
+            success: function(data) {  
+                var countries = JSON.parse(data);
+                $.each(countries, function(index, value){
+                    $("#countryNameToDisable").append($("<option>", {text : value.country
+                }));   
+                });  
+        }
+        }); 
+}
+
+
+function updateCountryEnable(){
+        $.ajax({ 
+            type: "GET", 
+            url: './PHP/updateCountry.php',
+            data: {peticion:"updateEnable"},   
+            success: function(data) {  
+                var countries = JSON.parse(data);
+                $.each(countries, function(index, value){
+                    $("#countryNameToActivate").append($("<option>", {text : value.country
+                }));   
+                });  
+        }
+        }); 
 }
 
 

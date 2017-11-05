@@ -7,7 +7,7 @@
 }
 .confederations-container .team-holder{
 	overflow: auto;
-	width: 70%;
+	width: 100%;
 	padding: 10px;
 	float: left;
 }
@@ -17,10 +17,7 @@
 	width: 30%;
 	float: right;
 }
-.confederations-container{
-	overflow: auto;
 
-}
 
 .team-selected,.team-repechaje{
 	float: left;
@@ -176,6 +173,7 @@
 	line-height: 35px;
 
 	margin-right: 3px;
+
 	margin-bottom: 5px;
 }
 

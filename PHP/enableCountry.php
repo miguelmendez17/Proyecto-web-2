@@ -2,7 +2,7 @@
 
 include './connectionPHP.php';
 
-$countryNameEnable=$_REQUEST['countryNameEnable'];
+$countryNameEnable=$_REQUEST['countryNameToActivate'];
 
 $query = "select Country from TEAMS where Country='$countryNameEnable'";
 

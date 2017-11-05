@@ -21,15 +21,15 @@ function loadRanking() {
                 "<p class='text-justify'>Country: "+data[i].name+"</p>"+
                 "<p class='text-justify'>Confederation: "+data[i].confederation+"</p>"+
                 "<p class='text-justify'>Points "+data[i].points+"</p>"+
-                "<div class='productprice'>"+
-                "<div class='pull-right'>"+
-         //       "<a href='#' onclick='' class='btn btn-warning btm-sm' role='button'>Activate<span class='glyphicon glyphicon-heart'></span></a>"+
-                "</div>"+
+           //     "<div class='productprice'>"+
+      //          "<div class='pull-right'>"+
+             //   "<a href='#' onclick='' class='btn btn-warning btm-sm' role='button'>Activate<span class='glyphicon glyphicon-heart'></span></a>"+
+        //        "</div>"+
 
-                "<div class='pricetext' >"+
+        //        "<div class='pricetext' >"+
          //       "<a href='#' onclick='' class='btn btn-success btm-sm' role='button'>Add<span class='glyphicon glyphicon-shopping-cart'></span></a>"+
-                "</div>"+
-                "</div>"+
+        //        "</div>"+
+       //         "</div>"+
                 "</div>"+
                 "</div>");
         }
