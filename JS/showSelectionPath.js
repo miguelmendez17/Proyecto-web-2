@@ -49,6 +49,8 @@ function drop(ev) {
 
 
 function loadAllTeams(){
+    $("#ALLCountries").empty();
+    $("#host").empty();
     $.ajax({
         url: "./PHP/getCountriesConfederation.php?",
         type: "post",

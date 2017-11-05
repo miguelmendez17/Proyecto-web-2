@@ -31,6 +31,11 @@ $(document).on('click', '#btn-addHost', function () {
     }            
 
     else{
+        $("#host img").each(function(){
+            var nombre = $(this).attr('title');
+        })
+       
+        alert(nombre);
         $('#ALLCountries').empty();
         view(6);  
     }
