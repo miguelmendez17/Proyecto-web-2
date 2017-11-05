@@ -41,6 +41,12 @@ insert into confederations(id,confederation,slot,slotReserv) values ('AFC','Conf
 insert into confederations(id,confederation,slot,slotReserv) values ('UEFA','Unión de Asociaciones Europeas de Fútbol',9,8)
 
 
+SELECT TEAMS.country, flags.flag, confederations.id
+FROM TEAMS
+INNER JOIN flags
+ON TEAMS.country = flags.name
+INNER JOIN confederations
+ON confederations.id = TEAMS.confederation and confederations.id = 'AFC'
 
 
 ---- ************** es importante que cree las tablas y luego le inserte los valores para probarlo*********************
