@@ -2,6 +2,7 @@
 
 include './connectionPHP.php';
 
+	//aquí está el valor del país a modificar
 	$countryNameDisable=$_REQUEST['countryNameToDisable'];
 
     $query = "select Country from TEAMS where Country='$countryNameDisable'";
@@ -11,6 +12,7 @@ include './connectionPHP.php';
 	$rows = pg_num_rows($result);
 
 	if ($rows>0) {
+		//este es el query para pasar un país activo a inactivarlo.. solo si existe ese pais.
 		$queryUpdate = "update TEAMS set activated=FALSE where Country = '$countryNameDisable'"; 
 
 	    $result=pg_query($globalConnection,$queryUpdate);
@@ -24,6 +26,7 @@ include './connectionPHP.php';
 	}
 
     else{
+    	//se envía el mensaje de que no existe ese país.
     	$message = "Sorry, that country does not exist";
         echo "<script>";
         echo "alert('$message');";  

@@ -2,6 +2,7 @@
 
 include './connectionPHP.php';
 
+//si pulsa el botón cancelar, lo dirige al login.
 if (isset($_REQUEST['cancelRegister']))
 {
     echo "<script>";
@@ -9,6 +10,7 @@ if (isset($_REQUEST['cancelRegister']))
     echo "</script>";  
 }
 
+//si presiona el botón registar un usuario, lo dirige a esta función.
 if (isset($_REQUEST['registrarUsuario']))
 {
     $name=$_REQUEST['name'];
@@ -22,6 +24,7 @@ if (isset($_REQUEST['registrarUsuario']))
     $rows = pg_numrows($result);
 
   	if ($rows>0){
+        //muestra mensaje de que ya ese usuario existe en el sistema.
         $mensaje = "That user already exists";
         echo "<script>";
         echo "alert('$mensaje');";  
@@ -30,6 +33,7 @@ if (isset($_REQUEST['registrarUsuario']))
     }
 
     else{
+        //guarda el usuario con respecto a lo que digitó en el formulario. Envía mensaje de éxito
     	$now = "now()";
     	$queryAgregar = "insert into usuarios values ('$name','$lastName','$age','$username', '$password','$now', '$now');";
         $result2=pg_query($globalConnection,$queryAgregar);
