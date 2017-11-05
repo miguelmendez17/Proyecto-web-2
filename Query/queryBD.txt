@@ -33,6 +33,15 @@ create table confederations(
 	slotReserv	int	not null
 );
 
+insert into confederations(id,confederation,slot,slotReserv) values ('CAF','Confederación Africana de Fútbol',5,0)
+insert into confederations(id,confederation,slot,slotReserv) values ('CONCACAF','onfederación de Norteamérica, Centroamérica y el Caribe de Fútbol',3,1)
+insert into confederations(id,confederation,slot,slotReserv) values ('CONMEBOL','Confederación Sudamericana de Fútbol',4,1)
+insert into confederations(id,confederation,slot,slotReserv) values ('OFC','	Confederación de Fútbol de Oceanía',0,1)
+insert into confederations(id,confederation,slot,slotReserv) values ('AFC','Confederación Asiática de Fútbol',4,1)
+insert into confederations(id,confederation,slot,slotReserv) values ('UEFA','Unión de Asociaciones Europeas de Fútbol',9,8)
+
+
+
 
 ---- ************** es importante que cree las tablas y luego le inserte los valores para probarlo*********************
 
