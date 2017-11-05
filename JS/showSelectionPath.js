@@ -52,8 +52,8 @@ function drop(ev) {
 
 function loadTEAMSNewTour() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
-   var cont = 0;
-    var categorias = ["CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA"];
+    var cont = 0;
+    var categorias = new Array("CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA");
     $.each(categorias, function(i, team){
         $('#'+team+'').empty();
 
@@ -67,12 +67,14 @@ function loadTEAMSNewTour() {
                 var countries = JSON.parse(data);
                 console.log(team);
                 $.each(countries, function(index, value){
-
                     $('#'+team+'').append('<abbr title="'+value.country+'"><img src="'+ value.flag +'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="'+ value.country +'" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
                     cont = cont +1;
                     console.log(cont);
-
                 });
+            },
+            error: function(){
+                
+                alert("Error");
             }
         });
 

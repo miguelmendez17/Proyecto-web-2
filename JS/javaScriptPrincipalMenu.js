@@ -49,7 +49,6 @@ function addCountry(){
 
 
 function updateCountry(){
-
         $.ajax({ 
             type: "GET", 
             url: './PHP/updateCountry.php',
@@ -65,7 +64,6 @@ function updateCountry(){
 }
 
 function updateCountryDisable(){
-    $("#countryNameToDisable").clear();
         $.ajax({ 
             type: "GET", 
             url: './PHP/updateCountry.php',

@@ -2,7 +2,6 @@
 
 include './connectionPHP.php';
 
-
 	$request = $_GET['peticion'];
 
 	if($request=="updateCargar"){
