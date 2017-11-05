@@ -53,7 +53,7 @@ function drop(ev) {
 function loadTEAMSNewTour() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
     var cont = 0;
-    var categorias = new Array("CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA");
+    var categorias = ["CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA"];
     $.each(categorias, function(i, team){
         $('#'+team+'').empty();
 
@@ -73,15 +73,13 @@ function loadTEAMSNewTour() {
                 });
             },
             error: function(){
-                
                 alert("Error");
+            }
             }
         });
 
 
     });
-
-
 }
 
 loadTEAMSNewTour();
