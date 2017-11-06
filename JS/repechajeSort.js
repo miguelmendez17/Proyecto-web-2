@@ -3,6 +3,7 @@
 
 $('.OTHER-table').hide();
 $('#btn-getOTHER-WR').hide();
+$('#btn-NEXT-WR').hide();
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -57,14 +58,11 @@ function randomNumberFromRange(min,max)
 }
 
 
+
 $('#repechajeSort-container').empty();
-
-
-
 
 function loadUEFARepechajeTeams() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
-
     var repechajes = JSON.parse(localStorage.getItem("repechajes"));
 
     $.each(repechajes, function(i, value){
@@ -101,16 +99,10 @@ function cleanScoreSpaces(){
     });
 }
 
-var score1 = randomNumberFromRange(1,5);
-var score2 = randomNumberFromRange(1,5);
 
 
 var repechajeResults = [];
 var repechajeDirectos = [];
-
-
-
-
 
 $(document).on('click', '#btn-getUEFA-WR', function () {
     repechajeResults = [];
@@ -176,17 +168,21 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
 
 
 
-      $('.repTeams').empty();
+
+    $(this).hide();
+    $('#btn-NEXT-WR').show();
+});
+
+$(document).on('click', '#btn-NEXT-WR', function () {
+    $('#btn-getOTHER-WR').show();
+    $('.repTeams').empty();
     cleanScoreSpaces();
     $('.titleScores').text('Repechajes OTROS:');
     loadOTHERRepechajeTeams();
     $('.UEFA-table').hide();
     $('.OTHER-table').show();
     $(this).hide();
-    $('#btn-getOTHER-WR').show();
 });
-
-
 
 
 
