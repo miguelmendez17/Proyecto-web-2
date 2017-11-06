@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
-    var myjson = JSON.parse(localStorage.getItem("directos"));
-    var hola = "hoasd";
+    var myjson = JSON.parse(localStorage.getItem("clasificadosPrueba"));
+    var host = localStorage.getItem("host");
     var tr;
+    myjson.sort((a, b) => Number(b.points) - Number(a.points));
+
     for (var i = 0; i < myjson.length; i++) {
-        tr = $('<tr/>');
-        tr.append("<td>"+(i+1+".  ")+"<img src="+myjson[i].flag+" width='60' height='40'>"+myjson[i].name+"</td>");
-        tr.append("<td>" + myjson[i].name + "</td>")
-        tr.append("<td>" + myjson[i].result + "</td>");
-        tr.append("<td>" + hola + "</td>");// editable
-        $('table').append(tr);
+        if(i<8){
+            tr = $('<tr/>');
+            tr.append("<td>"+(i+1+".  ")+"<img src="+myjson[i].flag+" width='60' height='40'>"+myjson[i].name+"</td>");
+            $('table').append(tr);
+        }
+    
     }
            
         /* --- sort Table click --*/
