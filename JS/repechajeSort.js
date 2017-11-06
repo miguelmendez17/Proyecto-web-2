@@ -61,7 +61,6 @@ $('#repechajeSort-container').empty();
 
 
 
-
 function loadUEFARepechajeTeams() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
 
@@ -113,6 +112,9 @@ var repechajeDirectos = [];
 
 
 $(document).on('click', '#btn-getUEFA-WR', function () {
+
+
+    
     repechajeResults = [];
         var cont = 1;
         $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
@@ -176,7 +178,7 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
 
 
 
-      $('.repTeams').empty();
+    $('.repTeams').empty();
     cleanScoreSpaces();
     $('.titleScores').text('Repechajes OTROS:');
     loadOTHERRepechajeTeams();
