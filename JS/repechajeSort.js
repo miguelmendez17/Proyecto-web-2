@@ -79,50 +79,71 @@ var score1 = randomNumberFromRange(1,5);
 var score2 = randomNumberFromRange(1,5);
 
 
-
+var repechajeResults = [];
+var repechajeDirectos = [];
 $(document).on('click', '#btn-getUEFA-WR', function () {
+    repechajeResults = [];
+        var cont = 1;
+        $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
 
-
-        $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(){
             $(this).attr('name',randomNumberFromRange(1,5));
-            console.log($(this).attr('name'));
+            repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),result:''});
+
         });
-
-        $('table tr').each(function(i){
-            if(i==3){
-
-                if (parseInt($('#t1 .repechajeUEFAGroup img').attr('name')) > $('#t2 .repechajeUEFAGroup img').attr('name')){
-                    $('.partido1 .UEFA-R-Score h4').text("WON " + $('#t1 .repechajeUEFAGroup img').attr('id')+$('#t1 .team-selected img').attr('name') )
-                } else if (parseInt($('#t1 .repechajeUEFAGroup img').attr('name')) < $('#t2 .repechajeUEFAGroup img').attr('name')){
-                    $('.partido1 .UEFA-R-Score h4').text("WON" + $('#t2 .repechajeUEFAGroup img').attr('id')+$('#t2 .team-selected img').attr('name') )
-                }
-
-            } if(i==2){
-                if (parseInt($('#t3 .repechajeUEFAGroup img').attr('name')) > $('#t4 .repechajeUEFAGroup img').attr('name')){
-                    $('.partido2 .UEFA-R-Score h4').text("WON" + $('#t3 .repechajeUEFAGroup img').attr('id') )
+       // console.log(repechajeResults);
+//pasa por cada row del table, y pregunta por los pares de los equipos, quien es el que gana para mostrarlo en el html. y ademas se mete en la lista de repechajesPartidos
+        $('table tr .UEFA-R-Score h4').each(function(i){
+            if(i===0){
+                if(repechajeResults[0].goals > repechajeResults[1].goals){
+                    $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                    repechajeResults[0].result = 'WON';
                 }else{
-                    $('.partido2 .UEFA-R-Score h4').text("WON" + $('#t4 .repechajeUEFAGroup img').attr('id') )
+                    $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                    repechajeResults[1].result = 'WON';
                 }
+            }
+            if(i===1){
 
-
-            } if(i==1){
-                if (parseInt($('#t5').attr('name')) > $('#t6').attr('name')){
-                    $('.partido1 .UEFA-R-Score h4').text("WON" + $('#t5 .repechajeUEFAGroup img').attr('id') )
+                if(repechajeResults[2].goals > repechajeResults[3].goals){
+                    $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                    repechajeResults[2].result = 'WON';
                 }else{
-                    $('.partido1 .UEFA-R-Score h4').text("WON" + $('#t6 .repechajeUEFAGroup img').attr('id') )
+                    $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                    repechajeResults[3].result = 'WON';
                 }
+            }
+            if(i===2){
 
-
-            } if(i==0){
-                if (parseInt($('#t7').attr('name')) > $('#t8').attr('name')){
-                    $('.partido1 .UEFA-R-Score h4').text("WON" + $('#t7 .repechajeUEFAGroup img').attr('id') )
+                if(repechajeResults[4].goals > repechajeResults[5].goals){
+                    $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
+                    repechajeResults[4].result = 'WON';
                 }else{
-                    $('.partido1 .UEFA-R-Score h4').text("WON" + $('#t8 .repechajeUEFAGroup img').attr('id') )
+                    $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
+                    repechajeResults[5].result = 'WON';
                 }
 
             }
+            if(i===3){
+
+                if(repechajeResults[6].goals > repechajeResults[7].goals){
+                    $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
+                    repechajeResults[6].result = 'WON';
+                }else{
+                    $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
+                    repechajeResults[7].result = 'WON';
+                }
+            }
 
         });
+
+ //se encarga de llenar la lista final de los que ganan los repechajes para luego los agregen en los bombos.
+        $(repechajeResults).each(function (i, val) {
+            if(val.result === 'WON'){
+                repechajeDirectos.push(val)
+            }
+        });
+
+
 
 });
 

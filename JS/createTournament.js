@@ -11,18 +11,18 @@ $(document).on('click', '#createTournament', function () {
     var totalCountriesRepechajeSelected = 39;
 
     $('.team-repechaje img').each(function () {
-        var team = {name: $(this).attr('id'), flag:$(this).attr('src'), result: ""};
+        var team = {name: $(this).attr('id'), flag:$(this).attr('src'),points:0, result: ""};
         listaRepechaje.push(team);
         totalCountries+=1;
     });
 
     $('.team-selected img').each(function () {
-        var team = {name:$(this).attr('id'), flag:$(this).attr('src'), result: ""};
+        var team = {name:$(this).attr('id'), flag:$(this).attr('src'),points:0, result: ""};
         listaDirectos.push(team);
         totalCountries+=1;
     });
 
-    if(totalCountries==totalCountriesRepechajeSelected){  
+    if(totalCountries === totalCountriesRepechajeSelected){
         var repechajes = JSON.stringify(listaRepechaje);
         var directos = JSON.stringify(listaDirectos);
         localStorage.setItem('repechajes',repechajes);
