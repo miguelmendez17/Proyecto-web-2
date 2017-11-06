@@ -26,6 +26,8 @@ function view(divID)
 
 $(document).on('click', '#btn-addHost', function () {
     localStorage.removeItem("host");
+    localStorage.removeItem("directos");
+    localStorage.removeItem("repechajes");
     var found = $("#host").find("img");
     if (found.length == 0) {
         return;

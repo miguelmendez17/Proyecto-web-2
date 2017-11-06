@@ -3,6 +3,7 @@
 
 $('.OTHER-table').hide();
 $('#btn-getOTHER-WR').hide();
+$('#btn-NEXT-WR').hide();
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -57,13 +58,12 @@ function randomNumberFromRange(min,max)
 }
 
 
-$('#repechajeSort-container').empty();
 
+$('#repechajeSort-container').empty();
 
 
 function loadUEFARepechajeTeams() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
-
     var repechajes = JSON.parse(localStorage.getItem("repechajes"));
 
     $.each(repechajes, function(i, value){
@@ -100,21 +100,22 @@ function cleanScoreSpaces(){
     });
 }
 
-var score1 = randomNumberFromRange(1,5);
-var score2 = randomNumberFromRange(1,5);
 
 
 var repechajeResults = [];
 var repechajeDirectos = [];
 
-
-
-
-
 $(document).on('click', '#btn-getUEFA-WR', function () {
 
-
+    var totalIMGselected = 0;
+    $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
+        totalIMGselected+=1;
+    });
     
+    if(totalIMGselected!=8){
+        return;
+    }
+
     repechajeResults = [];
         var cont = 1;
         $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
@@ -178,6 +179,14 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
 
 
 
+
+    $(this).hide();
+    $('#btn-NEXT-WR').show();
+});
+
+$(document).on('click', '#btn-NEXT-WR', function () {
+    $('#btn-getOTHER-WR').show();
+
     $('.repTeams').empty();
     cleanScoreSpaces();
     $('.titleScores').text('Repechajes OTROS:');
@@ -185,14 +194,23 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
     $('.UEFA-table').hide();
     $('.OTHER-table').show();
     $(this).hide();
-    $('#btn-getOTHER-WR').show();
 });
 
 
 
-
-
 $(document).on('click', '#btn-getOTHER-WR', function () {
+
+    var totalIMGselected = 0;
+    var totalOtherGroup= 4;   // cuatro repechajes nada más, aparte de los de la UEFA
+     $('.OTHER-table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
+        totalIMGselected+=1;
+     });
+     
+     //valida que ya haya seleccionado toodos los repechajes
+     if(totalIMGselected!=totalOtherGroup){
+        return;
+     }
+
     repechajeResults = [];
     var cont = 1;
     $('.OTHER-table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){

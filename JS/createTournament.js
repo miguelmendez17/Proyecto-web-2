@@ -29,7 +29,6 @@ $(document).on('click', '#createTournament', function () {
         localStorage.setItem('directos',directos);
 
         var prueba = localStorage.getItem('repechajes');
-        alert(JSON.stringify(prueba));
         location.href="createTournament.html";
     }
     else{
