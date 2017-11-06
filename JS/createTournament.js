@@ -8,16 +8,16 @@ localStorage.removeItem("directos");
 
 $(document).on('click', '#createTournament', function () {
     var totalCountries = 0;
-    var totalCountriesRepechajeSelected = 39;
+    var totalCountriesRepechajeSelected = 38;
 
     $('.team-repechaje img').each(function () {
-        var team = {name: $(this).attr('id'), flag:$(this).attr('src'),points:0, result: ""};
+        var team = {name: $(this).attr('id'), flag:$(this).attr('src'),points:$(this).attr('value'), result: ""};
         listaRepechaje.push(team);
         totalCountries+=1;
     });
 
     $('.team-selected img').each(function () {
-        var team = {name:$(this).attr('id'), flag:$(this).attr('src'),points:0, result: ""};
+        var team = {name:$(this).attr('id'), flag:$(this).attr('src'),points:$(this).attr('value'), result: ""};
         listaDirectos.push(team);
         totalCountries+=1;
     });
