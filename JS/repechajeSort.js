@@ -69,7 +69,7 @@ function loadUEFARepechajeTeams() {
     $.each(repechajes, function(i, value){
 // se encarga de agregar los equipos de cada confederacion,
       if(i >= 4)
-        $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+        $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" class="'+ value.points+'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
 
     });
 }
@@ -83,7 +83,7 @@ function loadOTHERRepechajeTeams() {
     $.each(repechajes, function(i, value){
 // se encarga de agregar los equipos de cada confederacion,
         if(i < 4)
-            $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+            $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" class="'+ value.points+'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
 
 
     });
@@ -121,7 +121,7 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
         $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
 
             $(this).attr('name',randomNumberFromRange(1,5));
-            repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),result:''});
+            repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),points:$(this).attr('class'),result:''});
 
         });
        // console.log(repechajeResults);
@@ -131,9 +131,17 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
                 if(repechajeResults[0].goals > repechajeResults[1].goals){
                     $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
                     repechajeResults[0].result = 'WON';
-                }else{
+                }else if(repechajeResults[0].goals < repechajeResults[1].goals){
                     $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
                     repechajeResults[1].result = 'WON';
+                }else{
+                    if(repechajeResults[0].points < repechajeResults[1].points){
+                        $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                        repechajeResults[0].result = 'WON';
+                    }else{
+                        $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                        repechajeResults[1].result = 'WON';
+                    }
                 }
             }
             if(i===1){
@@ -141,9 +149,17 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
                 if(repechajeResults[2].goals > repechajeResults[3].goals){
                     $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
                     repechajeResults[2].result = 'WON';
-                }else{
+                }else if(repechajeResults[2].goals < repechajeResults[3].goals){
                     $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
                     repechajeResults[3].result = 'WON';
+                }else{
+                    if(repechajeResults[2].points < repechajeResults[3].points){
+                        $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                        repechajeResults[2].result = 'WON';
+                    }else{
+                        $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                        repechajeResults[3].result = 'WON';
+                    }
                 }
             }
             if(i===2){
@@ -151,9 +167,17 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
                 if(repechajeResults[4].goals > repechajeResults[5].goals){
                     $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
                     repechajeResults[4].result = 'WON';
-                }else{
+                }else if(repechajeResults[4].goals < repechajeResults[5].goals){
                     $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
                     repechajeResults[5].result = 'WON';
+                }else{
+                    if(repechajeResults[4].points < repechajeResults[5].points){
+                        $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
+                        repechajeResults[4].result = 'WON';
+                    }else{
+                        $(this).text(repechajeResults[4].goals+" : " + repechajeResults[5].goals);
+                        repechajeResults[5].result = 'WON';
+                    }
                 }
 
             }
@@ -162,9 +186,17 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
                 if(repechajeResults[6].goals > repechajeResults[7].goals){
                     $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
                     repechajeResults[6].result = 'WON';
-                }else{
+                }else if(repechajeResults[6].goals < repechajeResults[7].goals){
                     $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
                     repechajeResults[7].result = 'WON';
+                }else{
+                    if(repechajeResults[6].points < repechajeResults[7].points){
+                        $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
+                        repechajeResults[6].result = 'WON';
+                    }else{
+                        $(this).text(repechajeResults[6].goals+" : " + repechajeResults[7].goals);
+                        repechajeResults[7].result = 'WON';
+                    }
                 }
             }
 
@@ -216,8 +248,8 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
     $('.OTHER-table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
 
         $(this).attr('name',randomNumberFromRange(1,5));
-        repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),result:''});
 
+        repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),points:$(this).attr('class'),result:''});
     });
     // console.log(repechajeResults);
 //pasa por cada row del table, y pregunta por los pares de los equipos, quien es el que gana para mostrarlo en el html. y ademas se mete en la lista de repechajesPartidos
@@ -226,9 +258,17 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
             if(repechajeResults[0].goals > repechajeResults[1].goals){
                 $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
                 repechajeResults[0].result = 'WON';
-            }else{
+            }else  if(repechajeResults[0].goals < repechajeResults[1].goals){
                 $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
                 repechajeResults[1].result = 'WON';
+            }else{
+                if(repechajeResults[0].points < repechajeResults[1].points){
+                    $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                    repechajeResults[0].result = 'WON';
+                }else{
+                    $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                    repechajeResults[1].result = 'WON';
+                }
             }
         }
         if(i===1){
@@ -236,9 +276,17 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
             if(repechajeResults[2].goals > repechajeResults[3].goals){
                 $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
                 repechajeResults[2].result = 'WON';
-            }else{
+            }else if(repechajeResults[2].goals < repechajeResults[3].goals){
                 $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
                 repechajeResults[3].result = 'WON';
+            }else{
+                if(repechajeResults[2].points < repechajeResults[3].points){
+                    $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                    repechajeResults[2].result = 'WON';
+                }else{
+                    $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                    repechajeResults[3].result = 'WON';
+                }
             }
         }
 
@@ -252,10 +300,21 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
     });
 
 
-    console.log(repechajeDirectos);
 
-    var directos = JSON.stringify(listaDirectos); // AQUI METE LA LISTA DE LOS QUE PASARON!
-    localStorage.setItem('repechajes',directos);// AQUI METE LA LISTA DE LOS QUE PASARON!
+    var repechajeFinal = JSON.stringify(repechajeDirectos); // AQUI METE LA LISTA DE LOS QUE PASARON!
+    localStorage.setItem('repechajes',repechajeFinal);// AQUI METE LA LISTA DE LOS QUE PASARON!
+
+    var directos = JSON.parse(localStorage.getItem('directos'));
+
+    $(repechajeDirectos).each(function (i,value) {
+
+        directos.push(value);
+    });
+
+
+    var directosFinal = JSON.stringify(directos);
+    localStorage.setItem('directos',directosFinal);
+
 });
 
 

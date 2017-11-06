@@ -1,8 +1,8 @@
 <?php
 
 include './connectionPHP.php';
-
-	$connectionConflict  = 'http://localhost/Proyecto Web 2/menuPrincipal.html';
+//'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html'
+	$connectionConflict  = 'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html';
 
 //si el valor es del boton login, entonces hace todo lo que está aquí dentro.
 if (isset($_REQUEST['btn-login']))
@@ -30,7 +30,7 @@ if (isset($_REQUEST['btn-login']))
 			if($array['nombredeusuario'] == $username && $array['contrasenna']==$password)
 			{
 				echo "<script>";
-        		echo "window.location = 'http://localhost/Proyecto Web 2/menuPrincipal.html'";
+        		echo "window.location = 'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html'";
         		echo "</script>";    
         		return;
 			}
@@ -43,7 +43,7 @@ if (isset($_REQUEST['btn-login']))
 function devuelveMismaPaginaIndex($connectionConflict){
 	echo "<script>";
 	echo "alert('Invalid username or password');"; 
-    echo "window.location = 'http://localhost/Proyecto Web 2/index.html'";
+    echo "window.location = 'http://localhost:8012/xampp/Proyecto-web-2/menuPrincipal.html'";
     echo "</script>";  
     return;
 }
