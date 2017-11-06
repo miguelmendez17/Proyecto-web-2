@@ -1,4 +1,9 @@
 
+//oculta lo necesario
+
+$('.OTHER-table').hide();
+$('#btn-getOTHER-WR').hide();
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -57,7 +62,7 @@ $('#repechajeSort-container').empty();
 
 
 
-function loadRepechajeTeams() {
+function loadUEFARepechajeTeams() {
     //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
 
     var repechajes = JSON.parse(localStorage.getItem("repechajes"));
@@ -67,13 +72,34 @@ function loadRepechajeTeams() {
       if(i >= 4)
         $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
 
+    });
+}
+loadUEFARepechajeTeams();
+
+function loadOTHERRepechajeTeams() {
+    //ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
+
+    var repechajes = JSON.parse(localStorage.getItem("repechajes"));
+
+    $.each(repechajes, function(i, value){
+// se encarga de agregar los equipos de cada confederacion,
+        if(i < 4)
+            $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+
 
     });
 }
-loadRepechajeTeams();
 
+function cleanScoreSpaces(){
+    $('table tr .UEFA-R-Team .repechajeUEFAGroup').each(function(i){
+        $(this).empty();
+    });
+    $('table tr .UEFA-R-Score h4').each(function(i){
 
+        $(this).text('- : -');
 
+    });
+}
 
 var score1 = randomNumberFromRange(1,5);
 var score2 = randomNumberFromRange(1,5);
@@ -81,6 +107,11 @@ var score2 = randomNumberFromRange(1,5);
 
 var repechajeResults = [];
 var repechajeDirectos = [];
+
+
+
+
+
 $(document).on('click', '#btn-getUEFA-WR', function () {
     repechajeResults = [];
         var cont = 1;
@@ -145,6 +176,71 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
 
 
 
+      $('.repTeams').empty();
+    cleanScoreSpaces();
+    $('.titleScores').text('Repechajes OTROS:');
+    loadOTHERRepechajeTeams();
+    $('.UEFA-table').hide();
+    $('.OTHER-table').show();
+    $(this).hide();
+    $('#btn-getOTHER-WR').show();
 });
+
+
+
+
+
+$(document).on('click', '#btn-getOTHER-WR', function () {
+    repechajeResults = [];
+    var cont = 1;
+    $('.OTHER-table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
+
+        $(this).attr('name',randomNumberFromRange(1,5));
+        repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),result:''});
+
+    });
+    // console.log(repechajeResults);
+//pasa por cada row del table, y pregunta por los pares de los equipos, quien es el que gana para mostrarlo en el html. y ademas se mete en la lista de repechajesPartidos
+    $('.OTHER-table tr .UEFA-R-Score h4').each(function(i){
+        if(i===0){
+            if(repechajeResults[0].goals > repechajeResults[1].goals){
+                $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                repechajeResults[0].result = 'WON';
+            }else{
+                $(this).text(repechajeResults[0].goals+" : " + repechajeResults[1].goals);
+                repechajeResults[1].result = 'WON';
+            }
+        }
+        if(i===1){
+
+            if(repechajeResults[2].goals > repechajeResults[3].goals){
+                $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                repechajeResults[2].result = 'WON';
+            }else{
+                $(this).text(repechajeResults[2].goals+" : " + repechajeResults[3].goals);
+                repechajeResults[3].result = 'WON';
+            }
+        }
+
+    });
+
+    //se encarga de llenar la lista final de los que ganan los repechajes para luego los agregen en los bombos.
+    $(repechajeResults).each(function (i, val) {
+        if(val.result === 'WON'){
+            repechajeDirectos.push(val)
+        }
+    });
+
+
+    console.log(repechajeDirectos);
+
+    var directos = JSON.stringify(listaDirectos); // AQUI METE LA LISTA DE LOS QUE PASARON!
+    localStorage.setItem('repechajes',directos);// AQUI METE LA LISTA DE LOS QUE PASARON!
+});
+
+
+
+
+
 
 

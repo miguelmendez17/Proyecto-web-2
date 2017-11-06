@@ -14,15 +14,16 @@
 </head>
 <body>
 
-	<h1>Repechajes de UEFA: </h1>
+	<h1 class="titleScores">Repechajes de UEFA: </h1>
 	<button style="margin-left: 50%;" id="btn-getUEFA-WR" class="btn btn-success" align="center">Get Winners</button>
+	<button style="margin-left: 50%;" id="btn-getOTHER-WR" class="btn btn-success" align="center">Get Winners</button>
 
 	<div class='repechajeSort-form'>
-		<div id="repechajeSort-container" class="form-group row">
+		<div id="repechajeSort-container" class="repTeams form-group row">
 		</div>
 	</div>
 
-	<table>
+	<table class="UEFA-table">
 		<tr>
 		    <th>Local</th>
 		    <th>Result</th>
@@ -50,7 +51,27 @@
 		</tr>
 	</table>
 
+	<table class="OTHER-table">
+		<tr>
+			<th>Local</th>
+			<th>Result</th>
+			<th>Visit</th>
+		</tr>
+		<tr class="partido1-other">
+			<td class="UEFA-R-Team" id="t9" ><div class="repechajeUEFAGroup team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+			<td class="UEFA-R-Score"><h4></h4></td>
+			<td class="UEFA-R-Team" id="t10"><div  class="repechajeUEFAGroup team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+		</tr>
+		<tr  class="partido2-other">
+			<td class="UEFA-R-Team"  id="t11" ><div class="repechajeUEFAGroup team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+			<td class="UEFA-R-Score"><h4></h4></td>
+			<td class="UEFA-R-Team" id="t12"><div  class="repechajeUEFAGroup team-selected" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+		</tr>
 
-<script src="JS/repechajeSort.js" type="text/javascript"></script>
+	</table>
+
+
+
+	<script src="JS/repechajeSort.js" type="text/javascript"></script>
 </body>
 </html>
