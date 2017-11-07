@@ -27,11 +27,11 @@ $(document).on('click', '#createTournament', function () {
         var directos = JSON.stringify(listaDirectos);
         localStorage.setItem('repechajes',repechajes);
         localStorage.setItem('directos',directos);
-
-        var prueba = localStorage.getItem('repechajes');
         location.href="createTournament.html";
     }
     else{
+        listaDirectos.length=0;
+        listaRepechaje.length=0;
         alert("You must select all");
     }
 

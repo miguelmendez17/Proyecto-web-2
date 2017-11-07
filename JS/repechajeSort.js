@@ -4,6 +4,7 @@
 $('.OTHER-table').hide();
 $('#btn-getOTHER-WR').hide();
 $('#btn-NEXT-WR').hide();
+$('#btn-NETX-TO-BOMBO').hide();
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -69,7 +70,7 @@ function loadUEFARepechajeTeams() {
     $.each(repechajes, function(i, value){
 // se encarga de agregar los equipos de cada confederacion,
       if(i >= 4)
-        $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" class="'+ value.points+'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+        $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" value="'+ value.points+'" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
 
     });
 }
@@ -83,7 +84,7 @@ function loadOTHERRepechajeTeams() {
     $.each(repechajes, function(i, value){
 // se encarga de agregar los equipos de cada confederacion,
         if(i < 4)
-            $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" class="'+ value.points+'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
+            $('#repechajeSort-container').append('<abbr title="'+value.name+'"><img src="'+ value.flag +'" id="'+ value.name +'" value="'+ value.points+'"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style=" padding: 2px 2px 2px 2px; "  width="70" height="31"></abbr>');
 
 
     });
@@ -119,10 +120,9 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
     repechajeResults = [];
         var cont = 1;
         $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
-
             $(this).attr('name',randomNumberFromRange(1,5));
-            repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),points:$(this).attr('class'),result:''});
-
+            repechajeResults.push({name:$(this).attr('id'),flag:$(this).attr('src'),goals: $(this).attr('name'),points:$(this).attr('value'),result:''});
+    
         });
        // console.log(repechajeResults);
 //pasa por cada row del table, y pregunta por los pares de los equipos, quien es el que gana para mostrarlo en el html. y ademas se mete en la lista de repechajesPartidos
@@ -209,16 +209,12 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
             }
         });
 
-
-
-
     $(this).hide();
     $('#btn-NEXT-WR').show();
 });
 
 $(document).on('click', '#btn-NEXT-WR', function () {
     $('#btn-getOTHER-WR').show();
-
     $('.repTeams').empty();
     cleanScoreSpaces();
     $('.titleScores').text('Repechajes OTROS:');
@@ -249,7 +245,7 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
 
         $(this).attr('name',randomNumberFromRange(1,5));
 
-        repechajeResults.push({name:$(this).attr('id'),goals: $(this).attr('name'),points:$(this).attr('class'),result:''});
+        repechajeResults.push({name:$(this).attr('id'),flag:$(this).attr('src'),goals: $(this).attr('name'),points:$(this).attr('value'),result:''});
     });
     // console.log(repechajeResults);
 //pasa por cada row del table, y pregunta por los pares de los equipos, quien es el que gana para mostrarlo en el html. y ademas se mete en la lista de repechajesPartidos
@@ -315,6 +311,16 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
     var directosFinal = JSON.stringify(directos);
     localStorage.setItem('directos',directosFinal);
 
+    $(this).hide();
+    $('#btn-NETX-TO-BOMBO').show();
+
+});
+
+
+$(document).on('click', '#btn-NETX-TO-BOMBO', function (){
+    var repechajes = JSON.parse(localStorage.getItem("repechajes"));
+    alert(JSON.stringify(repechajes));
+    location.href="bombos.html";
 });
 
 
