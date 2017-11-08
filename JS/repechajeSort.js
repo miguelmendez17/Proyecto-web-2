@@ -1,6 +1,5 @@
 
 //oculta lo necesario
-
 $('.OTHER-table').hide();
 $('#btn-getOTHER-WR').hide();
 $('#btn-NEXT-WR').hide();
@@ -25,9 +24,6 @@ function drop(ev) {
         var data = ev.dataTransfer.getData("text"); //mueve el equipo e arrastrado
         ev.target.appendChild(document.getElementById(data)); // lo mete dentro del espacio en blanco
     }else{//si no intercambie las banderas y el ID
-
-
-
         var elementoArrastrado = $("#"+ ev.dataTransfer.getData("text")); // Elemento arrastrado // Elemento arrastrado
 
         var idArrastrado = elementoArrastrado.attr('id');//obtiene el id ( nobmre de equipo)
@@ -58,8 +54,7 @@ function randomNumberFromRange(min,max)
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-
-
+//se limpia lo que está en el contenedor del repechajeSort.
 $('#repechajeSort-container').empty();
 
 
@@ -90,6 +85,8 @@ function loadOTHERRepechajeTeams() {
     });
 }
 
+
+//limpia los resultados en el espacio resultados del table.
 function cleanScoreSpaces(){
     $('table tr .UEFA-R-Team .repechajeUEFAGroup').each(function(i){
         $(this).empty();
@@ -108,16 +105,16 @@ var repechajeDirectos = [];
 
 $(document).on('click', '#btn-getUEFA-WR', function () {
 
-    var totalIMGselected = 0;
+    var totalIMGselected = 0; //variable que va llevando los países arrastrados para sacar sus resultados random en repechaje UEFA
     $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
-        totalIMGselected+=1;
+        totalIMGselected+=1; //aumento en cada coincidencia.
     });
     
     if(totalIMGselected!=8){
         return;
     }
 
-    repechajeResults = [];
+    repechajeResults = []; //lista temporal de resultados
         var cont = 1;
         $('table tr .UEFA-R-Team .repechajeUEFAGroup img').each(function(i){
             $(this).attr('name',randomNumberFromRange(1,5));
@@ -213,6 +210,8 @@ $(document).on('click', '#btn-getUEFA-WR', function () {
     $('#btn-NEXT-WR').show();
 });
 
+//se ocultan los necesarios, y se muestran los especificados. Cuando se obtienen
+//los repechajes de UEFA, se necesitan los repechajes de otras confederaciones. 
 $(document).on('click', '#btn-NEXT-WR', function () {
     $('#btn-getOTHER-WR').show();
     $('.repTeams').empty();
@@ -296,7 +295,6 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
     });
 
 
-
     var repechajeFinal = JSON.stringify(repechajeDirectos); // AQUI METE LA LISTA DE LOS QUE PASARON!
     localStorage.setItem('repechajes',repechajeFinal);// AQUI METE LA LISTA DE LOS QUE PASARON!
 
@@ -317,9 +315,9 @@ $(document).on('click', '#btn-getOTHER-WR', function () {
 });
 
 
+//aquí muestra el archivo donde están los bombos ya formados. Ordenado por 
+//primero anfitrión y luego los que le sigan en puntos.
 $(document).on('click', '#btn-NETX-TO-BOMBO', function (){
-    var repechajes = JSON.parse(localStorage.getItem("repechajes"));
-    alert(JSON.stringify(repechajes));
     location.href="bombos.html";
 });
 

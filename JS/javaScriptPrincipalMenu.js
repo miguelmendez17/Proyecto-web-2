@@ -1,3 +1,5 @@
+
+//función para cargar las categorias disponibles..
 $(document).ready(function(){
     var categorias = new Array("CAF","CONCACAF","CONMEBOL","OFC","AFC","UEFA");
     $.each(categorias, function(index, value){
@@ -7,6 +9,8 @@ $(document).ready(function(){
 });
 
 
+//función auxiliar que sirve para activar un div y desactivar los otros
+//esos ids están especificados en la variable "variables"
 function view(divID)
 {
     var variables=new Array("home","addCountry","updateCountry","diableCountry","enableCountry","newTournament","chooseHostID");
@@ -23,7 +27,8 @@ function view(divID)
 
 
 
-
+//esta es la función para agregar el nombre de host al localStorage
+//valida que de verdad se haya seleccionado un host. Y muestra la otar vista
 $(document).on('click', '#btn-addHost', function () {
     localStorage.removeItem("host");
     localStorage.removeItem("directos");
@@ -46,7 +51,8 @@ $(document).on('click', '#btn-addHost', function () {
 });
 
 
-
+//función que sirve para agregar un país
+//con sus respectivos datos que se necesita para agregar un país.
 function addCountry(){
     var countryName = $("#countryName").val();
     var countryPoints = $("#pointsCountry").val();
@@ -62,7 +68,7 @@ function addCountry(){
         url: "PHP/addCountry.php?",
         type: "post",
         dataType: "text",
-        async:false,
+        async:false,  //de alguna manera es importante decirle que no es asincronico para que sirva.
         data: {name:countryName, points:countryPoints, 
                image: countryImage, confederations:loadConfederations},
         success: function(datas){
@@ -76,6 +82,7 @@ function addCountry(){
 }
 
 
+//función para obtener los países que se pueden editar en el select.
 function updateCountry(){
         $.ajax({ 
             type: "GET", 
@@ -92,6 +99,7 @@ function updateCountry(){
         }); 
 }
 
+//este carga la lista de paises activos disponibles, y que se quieren inactivar
 function updateCountryDisable(){
         $.ajax({ 
             type: "GET", 
@@ -107,7 +115,7 @@ function updateCountryDisable(){
         }); 
 }
 
-
+//este carga la lista de paises inactivos disponibles, y que se quieren activar
 function updateCountryEnable(){
         $.ajax({ 
             type: "GET", 
@@ -124,7 +132,9 @@ function updateCountryEnable(){
 }
 
 
-
+//necesitamos la información proveniente de un país en específico
+//para que cuando le dé click al btnSearch se muestre la información de ese país
+//para posteriormente poder modificarlo.
 $(document).on('click', '#btnSearch', function () {
     var countryName = $("#countryNameUpdate").val();
     $.ajax({
@@ -141,7 +151,8 @@ $(document).on('click', '#btnSearch', function () {
 });
 
 
-
+//este es el botón de modificar, cuando ya está seguro de la modificación de un país
+//para luego guardarlo en base de datos. Verifica que no se dejen espacios en blanco.
 $(document).on('click', '#btnUpdate', function () {
     var countryImage = $("#countryImageUpdate").val();
     var countryPoints = $("#pointsCountryUpdate").val();

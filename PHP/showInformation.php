@@ -1,5 +1,7 @@
 <?php 
 include './connectionPHP.php';
+
+	//trae el nombre del país a mostrar información..
 	$countryName = $_POST['name'];
  	$query = "select * from flags as f
  			inner join

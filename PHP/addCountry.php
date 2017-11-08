@@ -2,6 +2,7 @@
 
 include './connectionPHP.php';
 
+	//variables necesarios traidas desde formulario para guardar en base de datos un país.
 	$countryName = $_POST['name'];
 	$countryPoints = $_POST['points'];
 	$countryImage = $_POST['image'];
