@@ -75,8 +75,7 @@ function addCountry(){
             alert(datas); 
        },
     });
-
-    $("countryName").empty();
+    $("#countryName").empty();
     $("#pointsCountry").empty();
     $("#countryImage").empty();
 }
@@ -101,34 +100,36 @@ function updateCountry(){
 
 //este carga la lista de paises activos disponibles, y que se quieren inactivar
 function updateCountryDisable(){
-        $.ajax({ 
-            type: "GET", 
-            url: './PHP/updateCountry.php',
-            data: {peticion:"updateDisable"},   
-            success: function(data) {  
-                var countries = JSON.parse(data);
-                $.each(countries, function(index, value){
-                    $("#countryNameToDisable").append($("<option>", {text : value.country
-                }));   
-                });  
+    $('#countryNameToDisable').empty();
+    $.ajax({ 
+        type: "GET", 
+        url: './PHP/updateCountry.php',
+        data: {peticion:"updateDisable"},   
+        success: function(data) {  
+            var countries = JSON.parse(data);
+            $.each(countries, function(index, value){
+                $("#countryNameToDisable").append($("<option>", {text : value.country
+            }));   
+            });  
         }
-        }); 
+    }); 
 }
 
 //este carga la lista de paises inactivos disponibles, y que se quieren activar
 function updateCountryEnable(){
-        $.ajax({ 
-            type: "GET", 
-            url: './PHP/updateCountry.php',
-            data: {peticion:"updateEnable"},   
-            success: function(data) {  
-                var countries = JSON.parse(data);
-                $.each(countries, function(index, value){
-                    $("#countryNameToActivate").append($("<option>", {text : value.country
-                }));   
-                });  
-            }
-        }); 
+    $("#countryNameToActivate").empty();
+    $.ajax({ 
+        type: "GET", 
+        url: './PHP/updateCountry.php',
+        data: {peticion:"updateEnable"},   
+        success: function(data) {  
+            var countries = JSON.parse(data);
+            $.each(countries, function(index, value){
+                $("#countryNameToActivate").append($("<option>", {text : value.country
+            }));   
+            });  
+        }
+    }); 
 }
 
 
@@ -148,6 +149,7 @@ $(document).on('click', '#btnSearch', function () {
             $('#img-Update').attr('src',country[0].flag);
        }
     });
+
 });
 
 
@@ -165,12 +167,15 @@ $(document).on('click', '#btnUpdate', function () {
     $.ajax({
         url: "./PHP/updateCountryFinal.php?",
         type: "post",
-        async:false,
+        async:false, 
         data: {countryIMG: countryImage, countryP: countryPoints,countryN: countryName},
         success: function(data){
             alert(data);
        }
     });
+
+    $("#countryImageUpdate").empty();
+    $("#pointsCountryUpdate").empty();
 });
 
 

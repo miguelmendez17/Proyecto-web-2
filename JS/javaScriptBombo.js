@@ -10,30 +10,70 @@ $(document).ready(function () {
     var bombo3 =  myjson.slice(16, 24) //terceros mejores puntajes
     var bombo4 =  myjson.slice(24,32); //los países directos con menores puntajes..
 
+    var arrayPositions = cargarJSONPositions();
+    var bombo1Letters = arrayPositions.slice(0,4);
+    var bombo2Letters = arrayPositions.slice(4,8);
+    var bombo3Letters = arrayPositions.slice(8,12);
+    var bombo4Letters = arrayPositions.slice(12,16);
+    var bombo5Letters = arrayPositions.slice(16,20);
+    var bombo6Letters = arrayPositions.slice(20,24);
+    var bombo7Letters = arrayPositions.slice(24,28);
+    var bombo8Letters = arrayPositions.slice(28,32);
+
     $.each(bombo1, function( key, value ) {
         html += '<tr>';
         if(bombo1[key].name==host) //esto es para ver a manera visual cual es el host, debe ir en primer bombo
         {
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo1[key].flag+" width='60' height='40'>"+bombo1[key].name + "  (HOST)"+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo2[key].flag+" width='60' height='40'>"+bombo2[key].name+cambiar(bombo2,key)+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo3[key].flag+" width='60' height='40'>"+bombo3[key].name+cambiar(bombo3,key)+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo4[key].flag+" width='60' height='40'>"+bombo4[key].name+cambiar(bombo4,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo1[key].flag+">"+bombo1[key].name + "  (HOST)"+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo2[key].flag+">"+bombo2[key].name+cambiar(bombo2,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo3[key].flag+">"+bombo3[key].name+cambiar(bombo3,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo4[key].flag+">"+bombo4[key].name+cambiar(bombo4,key)+"</td>";
             html += '</tr>'; 
         }
         else{
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo1[key].flag+" width='60' height='40'>"+bombo1[key].name+cambiar(bombo1,key)+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo2[key].flag+" width='60' height='40'>"+bombo2[key].name+cambiar(bombo2,key)+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo3[key].flag+" width='60' height='40'>"+bombo3[key].name+cambiar(bombo3,key)+"</td>";
-            html += "<td>"+(key+1+".  ")+"<img src="+bombo4[key].flag+" width='60' height='40'>"+bombo4[key].name+cambiar(bombo4,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo1[key].flag+">"+bombo1[key].name+cambiar(bombo1,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo2[key].flag+">"+bombo2[key].name+cambiar(bombo2,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo3[key].flag+">"+bombo3[key].name+cambiar(bombo3,key)+"</td>";
+            html += "<td>"+(key+1+".  ")+"<img src="+bombo4[key].flag+">"+bombo4[key].name+cambiar(bombo4,key)+"</td>";
             html += '</tr>'; 
         }
     });
-      $('#table').append(html); //guarda todo el html creado jquery en table
+    $('#table').append(html); //guarda todo el html creado jquery en table
     
+    htmlPositions = '';
+     $.each(bombo1Letters, function( key, value ) {
+            htmlPositions += '<tr>';
+            htmlPositions += "<td>"+bombo1Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo2Letters[key] +"</td>";
+            htmlPositions += "<td>"+bombo3Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo4Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo1Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo2Letters[key] +"</td>";
+            htmlPositions += "<td>"+bombo2Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo2Letters[key]+"</td>";
+            htmlPositions += '</tr>'; 
+            value+=1;
+        });
+        $('#tableDraw').append(htmlPositions); //guarda todo el html creado jquery en table
     }); // end doc ready
 
 
 //función auxiliar pra mostrar los puntos de cada país..
 function cambiar(bombo,key){    
     return "  ("+bombo[key].points +") points";
+}
+
+//carga en un array las posiciones. Para hacer mejor lo del sorteo.
+function cargarJSONPositions(){
+    var arrayPositions = []
+    var arrayLetters = new Array("A","B","C","D");
+    for(var i=1;i<=8;i++){
+        for(var a=0;a<arrayLetters.length;a++)
+        {
+            var createPosition = i +"-" +arrayLetters[a]; 
+            arrayPositions.push(createPosition);
+        }
+    }
+    return arrayPositions;
+
 }

@@ -11,7 +11,7 @@
         //envía la lista de todas las confederaciones, con sus respectivos países, banderas, etc.
         $queryUpdatePoints = "SELECT TEAMS.points,TEAMS.country, flags.flag, confederations.id
                     FROM TEAMS INNER JOIN flags ON TEAMS.country = flags.name INNER JOIN confederations
-                    ON confederations.id = TEAMS.confederation and confederations.id = '$confederacion'";
+                    ON confederations.id = TEAMS.confederation and confederations.id = '$confederacion' and TEAMS.activated='TRUE'";
         $result=pg_query($globalConnection,$queryUpdatePoints);
 
         $rows = pg_num_rows($result);

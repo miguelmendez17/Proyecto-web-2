@@ -1,26 +1,42 @@
 table, td{
     border: 1px solid #ddd;
-    margin:60px;
-    padding: 20px;
+    padding: 10px;
 }
 
 
 th{
-	margin: 20px;
-    padding: 20px;
+	margin: 30px;
+    padding: 10px;
+}
+button{
+    margin-bottom: : 30px;
+}
+#table {
+    width: 45%; 
+    float: left;
+    margin-right: 5%;
+    margin-left: 10px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 90%;
+#tableDram{
+    width: 35%;
+    float: left;
+    align-items: :right;
 }
+
+#tableUEFA,#tableOTHERS {
+    width: 70%; 
+    float: left;
+    margin-left: 60px;
+}
+
 
 td {
-    height: 50px;
+    height: 30px;
     vertical-align: bottom;
 }
 
-
-.clasePoints{
-	color: green;
+td img{
+    width:50px;
+    height:30px;
 }
