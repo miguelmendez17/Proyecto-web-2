@@ -38,8 +38,7 @@ $(document).ready(function () {
             html += '</tr>'; 
         }
     });
-    $('#table').append(html); //guarda todo el html creado jquery en table
-    
+    $('#table').append(html); //guarda todo el html creado jquery en table    
     htmlPositions = '';
      $.each(bombo1Letters, function( key, value ) {
             htmlPositions += '<tr>';
@@ -47,15 +46,16 @@ $(document).ready(function () {
             htmlPositions += "<td>"+bombo2Letters[key] +"</td>";
             htmlPositions += "<td>"+bombo3Letters[key]+"</td>";
             htmlPositions += "<td>"+bombo4Letters[key]+"</td>";
-            htmlPositions += "<td>"+bombo1Letters[key]+"</td>";
-            htmlPositions += "<td>"+bombo2Letters[key] +"</td>";
-            htmlPositions += "<td>"+bombo2Letters[key]+"</td>";
-            htmlPositions += "<td>"+bombo2Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo5Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo6Letters[key] +"</td>";
+            htmlPositions += "<td>"+bombo7Letters[key]+"</td>";
+            htmlPositions += "<td>"+bombo8Letters[key]+"</td>";
             htmlPositions += '</tr>'; 
-            value+=1;
         });
         $('#tableDraw').append(htmlPositions); //guarda todo el html creado jquery en table
-    }); // end doc ready
+
+        probar();
+}); // end doc ready
 
 
 //función auxiliar pra mostrar los puntos de cada país..
@@ -75,5 +75,15 @@ function cargarJSONPositions(){
         }
     }
     return arrayPositions;
+}
 
+function probar(){
+    $('#table img').each(function () {
+        var images = $(this).attr('src'); 
+    });
+
+    $('#tableDraw td').each(function (index){
+        $(this).prepend($('<img>',{id:'theImg',src:'https://i.stack.imgur.com/6ik31.png?s=32&g=1'}));
+        $(this).delay(500 * index).slideDown(500); //hacerlo 
+    });
 }
